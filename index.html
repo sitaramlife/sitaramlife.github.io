@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sitaram.life — Naam Jap Sadhana</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&family=Noto+Sans+Devanagari:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --moss:#3B4A2F; --fern:#516640; --leaf:#6B8C52; --sage:#96B07D; --mist:#C4D4AF;
+  --earth:#5C3D1E; --bark:#7A5230; --clay:#A06A3A; --sand:#D4A96A;
+  --parch:#F5EDD8; --cream:#FAF6EE; --ink:#1A1408; --bdr:rgba(107,140,82,0.2);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Lato',sans-serif;background:var(--ink);color:var(--cream);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse 90% 50% at 0% 0%,rgba(59,74,47,0.5) 0%,transparent 55%),radial-gradient(ellipse 70% 70% at 100% 100%,rgba(92,61,30,0.35) 0%,transparent 55%),radial-gradient(ellipse 60% 60% at 50% 40%,rgba(26,20,8,0.7) 0%,#100C04 100%);pointer-events:none;}
+body::after{content:'';position:fixed;inset:0;z-index:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;opacity:0.6;}
+.page{position:relative;z-index:1;max-width:920px;margin:0 auto;padding:0 16px 60px;}
+
+/* HEADER */
+header{text-align:center;padding:48px 20px 24px;}
+
+.sitaram-title{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,8vw,5rem);font-weight:700;font-style:italic;background:linear-gradient(160deg,var(--mist) 0%,var(--sage) 35%,var(--sand) 65%,var(--clay) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:4px;line-height:1.15;animation:glow 8s ease-in-out infinite;}
+@keyframes glow{0%,100%{filter:brightness(1)}50%{filter:brightness(1.12)}}
+.site-domain{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(1.8rem,5vw,2.8rem);letter-spacing:8px;color:var(--parch);text-transform:uppercase;margin-top:0;background:linear-gradient(160deg,var(--mist) 0%,var(--sage) 35%,var(--sand) 65%,var(--clay) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:glow 8s ease-in-out infinite;}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;color:rgba(245,237,216,0.38);font-size:0.95rem;margin-top:10px;}
+.orn{display:flex;align-items:center;gap:14px;margin:0 0 30px;}
+.orn::before{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(107,140,82,0.35));}
+.orn::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(107,140,82,0.35),transparent);}
+.orn-inner{font-size:0.65rem;letter-spacing:4px;color:rgba(150,176,125,0.4);font-family:'Lato';text-transform:uppercase;}
+
+/* GUIDANCE BANNER */
+.guidance-banner{
+  display:flex;align-items:flex-start;gap:16px;
+  background:rgba(92,61,30,0.12);
+  border:1px solid rgba(160,106,58,0.25);
+  border-left:3px solid var(--clay);
+  border-radius:6px;
+  padding:20px 22px;
+  margin-bottom:28px;
+}
+.guidance-icon{font-size:1.4rem;flex-shrink:0;margin-top:2px;line-height:1;}
+.guidance-text{display:flex;flex-direction:column;gap:10px;}
+.guidance-hindi{
+  font-family:'Noto Sans Devanagari',sans-serif;
+  font-size:0.95rem;font-weight:400;
+  color:rgba(245,237,216,0.82);
+  line-height:1.75;letter-spacing:0.2px;
+}
+.guidance-english{
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-size:0.88rem;
+  color:rgba(196,212,175,0.55);
+  line-height:1.65;
+  border-top:1px solid rgba(160,106,58,0.15);
+  padding-top:10px;
+}
+
+/* JOIN */
+#join-screen{display:flex;flex-direction:column;align-items:center;padding:4px 0 40px;}
+.join-card{width:100%;max-width:420px;background:rgba(59,74,47,0.12);border:1px solid rgba(107,140,82,0.22);border-radius:6px;padding:46px 38px 40px;position:relative;box-shadow:0 32px 80px rgba(0,0,0,0.55);}
+.join-card::before{content:'🌿';position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:var(--ink);padding:0 12px;font-size:1.3rem;}
+.join-card h2{font-family:'Playfair Display',serif;font-weight:600;font-size:1.45rem;color:var(--parch);text-align:center;margin-bottom:6px;}
+.join-card p{font-family:'Playfair Display',serif;font-style:italic;color:rgba(245,237,216,0.38);font-size:0.9rem;text-align:center;margin-bottom:30px;}
+.field{margin-bottom:18px;}
+.field label{display:block;font-size:0.68rem;font-weight:700;letter-spacing:2.5px;color:var(--sage);text-transform:uppercase;margin-bottom:7px;}
+.field input{width:100%;padding:13px 16px;background:rgba(245,237,216,0.05);border:1px solid rgba(107,140,82,0.25);border-radius:4px;color:var(--cream);font-family:'Lato';font-size:1rem;outline:none;transition:all 0.22s;}
+.field input::placeholder{color:rgba(245,237,216,0.22);font-style:italic;}
+.field input:focus{border-color:var(--leaf);background:rgba(107,140,82,0.1);box-shadow:0 0 0 3px rgba(107,140,82,0.12);}
+.ref-hint{font-size:0.75rem;font-style:italic;color:rgba(196,212,175,0.35);text-align:center;margin-top:8px;}
+.join-btn{width:100%;padding:14px;margin-top:4px;background:linear-gradient(135deg,var(--moss) 0%,var(--fern) 50%,var(--leaf) 100%);color:var(--cream);border:none;border-radius:4px;font-family:'Lato';font-weight:700;font-size:0.82rem;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:all 0.2s;overflow:hidden;}
+.join-btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(59,74,47,0.45);}
+.err{color:#C47A6A;font-style:italic;font-size:0.88rem;text-align:center;margin-top:10px;display:none;}
+.err.show{display:block;}
+
+/* NAV */
+#app-screen{display:none;}
+.nav-bar{display:flex;gap:4px;background:rgba(59,74,47,0.1);border:1px solid var(--bdr);border-radius:6px;padding:5px;margin-bottom:28px;flex-wrap:wrap;}
+.nav-btn{flex:1;min-width:80px;padding:10px 6px;background:transparent;border:none;border-radius:4px;color:rgba(196,212,175,0.38);font-family:'Lato';font-weight:700;font-size:0.63rem;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all 0.2s;white-space:nowrap;}
+.nav-btn.active{background:linear-gradient(135deg,var(--moss),var(--fern));color:var(--mist);box-shadow:0 3px 14px rgba(59,74,47,0.45);}
+.nav-btn:not(.active):hover{color:var(--sage);background:rgba(107,140,82,0.08);}
+.tab{display:none;}
+.tab.active{display:block;animation:fadein 0.28s ease;}
+@keyframes fadein{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+
+/* SHARED COMPONENTS */
+.user-strip{display:flex;align-items:center;gap:14px;padding:16px 20px;margin-bottom:22px;background:rgba(59,74,47,0.12);border:1px solid var(--bdr);border-radius:6px;}
+.u-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--moss),var(--leaf));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display';font-size:1.2rem;color:var(--parch);flex-shrink:0;box-shadow:0 0 0 3px rgba(107,140,82,0.2);}
+.u-info{flex:1;}
+.u-name{font-family:'Playfair Display',serif;font-weight:600;font-size:1.05rem;color:var(--parch);}
+.u-sub{font-size:0.8rem;color:rgba(196,212,175,0.42);margin-top:2px;}
+.streak-pill{background:rgba(92,61,30,0.3);border:1px solid rgba(160,106,58,0.3);padding:7px 14px;border-radius:20px;font-size:0.72rem;font-weight:700;letter-spacing:1.5px;color:var(--sand);white-space:nowrap;}
+
+.section-label{font-size:0.65rem;font-weight:700;letter-spacing:3px;color:rgba(150,176,125,0.5);text-transform:uppercase;margin-bottom:12px;margin-top:6px;display:flex;align-items:center;gap:8px;}
+.section-label::after{content:'';flex:1;height:1px;background:rgba(107,140,82,0.15);}
+
+.btn-sm{padding:9px 16px;border-radius:4px;border:1px solid rgba(107,140,82,0.25);background:rgba(107,140,82,0.1);color:var(--sage);font-family:'Lato';font-weight:700;font-size:0.78rem;cursor:pointer;transition:all 0.18s;}
+.btn-sm:hover{background:rgba(107,140,82,0.22);}
+
+/* COUNTER HERO */
+.counter-hero{background:rgba(59,74,47,0.1);border:1px solid var(--bdr);border-radius:8px;padding:36px 24px 28px;text-align:center;margin-bottom:16px;position:relative;overflow:hidden;}
+.counter-hero::before{content:'सीताराम';position:absolute;font-family:'Noto Sans Devanagari';font-size:7rem;font-weight:700;opacity:0.03;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;color:var(--sage);}
+.goal-ring-wrap{position:relative;width:160px;height:160px;margin:0 auto 18px;}
+.goal-ring-svg{position:absolute;inset:0;transform:rotate(-90deg);}
+.ring-bg{fill:none;stroke:rgba(107,140,82,0.12);stroke-width:8;}
+.ring-prog{fill:none;stroke:url(#ringGrad);stroke-width:8;stroke-linecap:round;stroke-dasharray:408;stroke-dashoffset:408;transition:stroke-dashoffset 0.6s cubic-bezier(0.34,1.2,0.64,1);}
+.ring-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.big-count{font-family:'Playfair Display',serif;font-weight:700;font-size:2.8rem;color:var(--parch);line-height:1;transition:transform 0.1s;}
+.big-count.bump{transform:scale(1.14);color:var(--sage);}
+.ring-label{font-size:0.68rem;letter-spacing:2px;color:rgba(196,212,175,0.45);text-transform:uppercase;margin-top:4px;}
+.goal-progress-txt{font-size:0.82rem;color:rgba(196,212,175,0.45);font-style:italic;margin-bottom:20px;}
+.goal-progress-txt span{color:var(--sage);font-weight:700;font-style:normal;}
+.ctr-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:12px;}
+.ctr-btn{padding:11px 22px;border-radius:4px;border:none;font-family:'Lato';font-weight:700;font-size:0.82rem;letter-spacing:1px;cursor:pointer;transition:all 0.18s;}
+.btn-main{background:linear-gradient(135deg,var(--fern),var(--leaf));color:var(--cream);padding:13px 32px;font-size:0.88rem;box-shadow:0 4px 20px rgba(81,102,64,0.35);}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(81,102,64,0.5);}
+.btn-main:active{transform:scale(0.96);}
+.btn-mala{background:rgba(92,61,30,0.2);color:var(--sand);border:1px solid rgba(160,106,58,0.3);}
+.btn-mala:hover{background:rgba(92,61,30,0.35);}
+.btn-ghost{background:rgba(196,212,175,0.05);color:rgba(196,212,175,0.4);border:1px solid rgba(196,212,175,0.1);font-size:0.78rem;}
+.btn-ghost:hover{background:rgba(196,212,175,0.1);}
+.custom-row{display:flex;gap:8px;justify-content:center;margin-top:4px;}
+.custom-row input{width:80px;padding:9px 10px;text-align:center;background:rgba(245,237,216,0.05);border:1px solid rgba(107,140,82,0.2);border-radius:4px;color:var(--cream);font-family:'Lato';font-size:0.95rem;outline:none;}
+.custom-row input:focus{border-color:var(--leaf);}
+.goal-setter{display:flex;align-items:center;gap:10px;justify-content:center;margin-top:14px;padding-top:14px;border-top:1px solid rgba(107,140,82,0.1);flex-wrap:wrap;}
+.goal-setter label{font-size:0.72rem;letter-spacing:2px;color:rgba(196,212,175,0.4);text-transform:uppercase;}
+.goal-setter input{width:90px;padding:7px 10px;text-align:center;background:rgba(245,237,216,0.05);border:1px solid rgba(107,140,82,0.2);border-radius:4px;color:var(--cream);font-family:'Lato';font-size:0.9rem;outline:none;}
+.goal-setter input:focus{border-color:var(--leaf);}
+
+/* STATS */
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px;}
+@media(max-width:500px){.stats-grid{grid-template-columns:repeat(2,1fr);}}
+.stt{background:rgba(59,74,47,0.1);border:1px solid var(--bdr);border-radius:5px;padding:14px 10px;text-align:center;}
+.stt-v{font-family:'Playfair Display',serif;font-weight:600;font-size:1.55rem;color:var(--parch);display:block;}
+.stt-l{font-size:0.63rem;letter-spacing:1.5px;color:rgba(196,212,175,0.38);text-transform:uppercase;display:block;margin-top:2px;}
+
+/* JOURNAL */
+.journal-form{background:rgba(59,74,47,0.08);border:1px solid var(--bdr);border-radius:6px;padding:18px;margin-bottom:14px;}
+.journal-form textarea{width:100%;padding:12px 14px;background:rgba(245,237,216,0.04);border:1px solid rgba(107,140,82,0.18);border-radius:4px;color:var(--cream);font-family:'Playfair Display',serif;font-size:0.95rem;font-style:italic;line-height:1.6;resize:vertical;min-height:80px;outline:none;transition:border-color 0.2s;}
+.journal-form textarea::placeholder{color:rgba(245,237,216,0.2);}
+.journal-form textarea:focus{border-color:var(--leaf);}
+.journal-form-btns{display:flex;justify-content:flex-end;margin-top:10px;gap:8px;}
+.journal-entries{display:flex;flex-direction:column;gap:10px;}
+.j-entry{background:rgba(59,74,47,0.07);border:1px solid rgba(107,140,82,0.12);border-left:3px solid var(--fern);border-radius:4px;padding:14px 16px;}
+.j-meta{font-size:0.7rem;letter-spacing:1px;color:rgba(150,176,125,0.4);margin-bottom:7px;display:flex;justify-content:space-between;align-items:center;}
+.j-count{color:var(--sage);font-weight:700;}
+.j-text{font-family:'Playfair Display',serif;font-style:italic;font-size:0.92rem;color:rgba(245,237,216,0.72);line-height:1.6;}
+.j-del{background:transparent;border:none;color:rgba(196,212,175,0.2);font-size:0.8rem;cursor:pointer;transition:color 0.2s;padding:2px 4px;}
+.j-del:hover{color:rgba(196,100,100,0.5);}
+.j-empty,.hist-empty{font-style:italic;color:rgba(196,212,175,0.25);font-size:0.9rem;padding:14px 0;text-align:center;}
+
+/* HISTORY */
+.hist-list{border-radius:5px;overflow:hidden;border:1px solid rgba(107,140,82,0.12);}
+.hist-row{display:flex;justify-content:space-between;align-items:center;padding:11px 16px;border-bottom:1px solid rgba(107,140,82,0.08);background:rgba(59,74,47,0.06);transition:background 0.15s;}
+.hist-row:hover{background:rgba(59,74,47,0.12);}
+.hist-row:last-child{border-bottom:none;}
+.hist-date{font-size:0.87rem;color:rgba(245,237,216,0.5);font-style:italic;}
+.hist-cnt{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--sage);}
+
+/* LEADERBOARD */
+.lb-head,.sangat-head,.blog-head,.ref-head{text-align:center;margin-bottom:22px;}
+.lb-head h2,.sangat-head h2,.blog-head h2,.ref-head h2{font-family:'Playfair Display',serif;font-weight:600;font-size:1.6rem;color:var(--parch);margin-bottom:4px;}
+.lb-head p,.sangat-head p,.blog-head p,.ref-head p{font-style:italic;color:rgba(245,237,216,0.35);font-size:0.9rem;}
+.filter-pills{display:flex;gap:8px;justify-content:center;margin-bottom:20px;flex-wrap:wrap;}
+.f-pill{padding:6px 18px;border-radius:20px;border:1px solid rgba(107,140,82,0.2);background:transparent;color:rgba(196,212,175,0.38);font-family:'Lato';font-size:0.8rem;font-weight:700;letter-spacing:1px;cursor:pointer;transition:all 0.2s;}
+.f-pill.active{background:rgba(107,140,82,0.18);color:var(--sage);border-color:rgba(107,140,82,0.45);}
+.f-pill:not(.active):hover{color:var(--sage);}
+.lb-cards{display:flex;flex-direction:column;gap:8px;}
+.lb-card{display:flex;align-items:center;gap:14px;padding:14px 18px;background:rgba(59,74,47,0.08);border:1px solid rgba(107,140,82,0.12);border-radius:5px;transition:all 0.18s;}
+.lb-card.me{background:rgba(59,74,47,0.18);border-color:rgba(107,140,82,0.3);}
+.lb-card.top1{border-color:rgba(160,106,58,0.4);background:rgba(92,61,30,0.12);}
+.lb-rank-badge{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;background:rgba(245,237,216,0.06);}
+.lb-rank-badge.r1{background:linear-gradient(135deg,var(--earth),var(--clay));}
+.lb-rank-badge.r2{background:rgba(150,150,150,0.2);}
+.lb-rank-badge.r3{background:rgba(122,82,48,0.25);}
+.lb-rnum{font-family:'Playfair Display';font-size:0.8rem;color:rgba(196,212,175,0.3);}
+.lb-info{flex:1;}
+.lb-uname{font-weight:700;font-size:0.98rem;color:var(--parch);}
+.lb-meta{font-size:0.77rem;color:rgba(196,212,175,0.38);margin-top:2px;font-style:italic;}
+.lb-score-col{text-align:right;}
+.lb-score-val{font-family:'Playfair Display',serif;font-weight:600;font-size:1.35rem;color:var(--sage);}
+.lb-score-unit{font-size:0.68rem;color:rgba(196,212,175,0.35);display:block;margin-top:1px;letter-spacing:1px;text-transform:uppercase;}
+.you-chip{font-size:0.58rem;letter-spacing:2px;font-weight:700;color:var(--sand);text-transform:uppercase;margin-left:8px;vertical-align:middle;}
+.lb-remove-btn{
+  padding:5px 11px;border-radius:4px;
+  border:1px solid rgba(196,80,80,0.25);
+  background:rgba(196,80,80,0.07);
+  color:rgba(210,120,120,0.7);
+  font-family:'Lato';font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  cursor:pointer;transition:all 0.18s;white-space:nowrap;flex-shrink:0;
+}
+.lb-remove-btn:hover{background:rgba(196,80,80,0.2);border-color:rgba(196,80,80,0.5);color:rgba(230,110,110,0.95);}
+.lb-hidden{opacity:0.45;}
+.lb-empty,.ref-empty{text-align:center;padding:36px;font-style:italic;color:rgba(196,212,175,0.28);}
+
+/* SANGAT */
+.sangat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;}
+.sg-card{background:rgba(59,74,47,0.08);border:1px solid rgba(107,140,82,0.12);border-radius:5px;padding:22px 14px;text-align:center;transition:border-color 0.2s;}
+.sg-card:hover{border-color:rgba(107,140,82,0.3);}
+.sg-card.me-c{border-color:rgba(107,140,82,0.35);background:rgba(59,74,47,0.15);}
+.sg-av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--moss),var(--fern));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display';font-size:1.2rem;color:var(--parch);margin:0 auto 10px;}
+.sg-name{font-weight:700;font-size:0.95rem;color:var(--parch);margin-bottom:3px;}
+.sg-since{font-size:0.7rem;color:rgba(196,212,175,0.3);font-style:italic;margin-bottom:8px;}
+.sg-total{font-family:'Playfair Display';font-size:1rem;color:var(--sage);}
+.sg-streak{font-size:0.72rem;color:rgba(212,169,106,0.6);margin-top:3px;}
+
+/* ═══════════════════════════════
+   BLOG
+═══════════════════════════════ */
+.blog-grid{display:flex;flex-direction:column;gap:0;}
+.blog-card{
+  background:rgba(59,74,47,0.07);
+  border:1px solid rgba(107,140,82,0.12);
+  border-radius:6px;padding:0;overflow:hidden;
+  margin-bottom:14px;transition:border-color 0.2s;
+}
+.blog-card:hover{border-color:rgba(107,140,82,0.28);}
+.blog-card-inner{padding:24px 26px;}
+.blog-tag{
+  display:inline-block;
+  font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  padding:3px 10px;border-radius:12px;margin-bottom:10px;
+  background:rgba(107,140,82,0.18);color:var(--sage);border:1px solid rgba(107,140,82,0.3);
+}
+.blog-title{font-family:'Playfair Display',serif;font-weight:700;font-size:1.25rem;color:var(--parch);margin-bottom:8px;line-height:1.4;cursor:pointer;}
+.blog-title:hover{color:var(--sage);}
+.blog-meta{font-size:0.72rem;color:rgba(196,212,175,0.35);margin-bottom:12px;font-style:italic;}
+.blog-excerpt{font-family:'Playfair Display',serif;font-style:italic;font-size:0.92rem;color:rgba(245,237,216,0.55);line-height:1.7;}
+.blog-read-more{
+  display:inline-block;margin-top:14px;
+  font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--sage);cursor:pointer;transition:color 0.2s;
+  background:transparent;border:none;font-family:'Lato';
+}
+.blog-read-more:hover{color:var(--mist);}
+.blog-delete-btn{
+  flex-shrink:0;
+  background:rgba(196,80,80,0.08);
+  border:1px solid rgba(196,80,80,0.2);
+  color:rgba(196,120,120,0.6);
+  padding:4px 10px;border-radius:4px;
+  font-family:'Lato';font-size:0.68rem;font-weight:700;letter-spacing:1px;
+  cursor:pointer;transition:all 0.18s;white-space:nowrap;
+}
+.blog-delete-btn:hover{background:rgba(196,80,80,0.18);border-color:rgba(196,80,80,0.45);color:rgba(220,100,100,0.9);}
+
+/* Full article view */
+#blog-article{display:none;}
+.article-back{
+  display:flex;align-items:center;gap:8px;margin-bottom:24px;
+  background:transparent;border:none;color:rgba(196,212,175,0.45);
+  font-family:'Lato';font-size:0.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  cursor:pointer;transition:color 0.2s;
+}
+.article-back:hover{color:var(--sage);}
+.article-tag{display:inline-block;font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:12px;margin-bottom:14px;background:rgba(107,140,82,0.18);color:var(--sage);border:1px solid rgba(107,140,82,0.3);}
+.article-title{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(1.5rem,4vw,2.2rem);color:var(--parch);line-height:1.3;margin-bottom:10px;}
+.article-meta{font-size:0.75rem;color:rgba(196,212,175,0.35);font-style:italic;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid rgba(107,140,82,0.15);}
+.article-body{font-family:'Playfair Display',serif;font-size:1.05rem;line-height:1.9;color:rgba(245,237,216,0.78);}
+.article-body p{margin-bottom:20px;}
+.article-body h3{font-size:1.2rem;color:var(--parch);margin:28px 0 12px;font-weight:600;}
+.article-body blockquote{border-left:3px solid var(--fern);padding:12px 20px;margin:20px 0;background:rgba(59,74,47,0.12);border-radius:0 4px 4px 0;font-style:italic;color:rgba(245,237,216,0.65);}
+
+/* Admin add blog */
+.admin-blog-form{background:rgba(59,74,47,0.08);border:1px solid rgba(107,140,82,0.2);border-radius:6px;padding:22px;margin-bottom:20px;}
+.admin-blog-form input,.admin-blog-form textarea,.admin-blog-form select{width:100%;padding:10px 14px;background:rgba(245,237,216,0.05);border:1px solid rgba(107,140,82,0.2);border-radius:4px;color:var(--cream);font-family:'Lato';font-size:0.9rem;outline:none;margin-bottom:10px;transition:border-color 0.2s;}
+.admin-blog-form input:focus,.admin-blog-form textarea:focus,.admin-blog-form select:focus{border-color:var(--leaf);}
+.admin-blog-form textarea{font-family:'Playfair Display',serif;font-size:0.9rem;line-height:1.6;min-height:160px;resize:vertical;}
+.admin-blog-form select option{background:#1A1C14;}
+
+/* ═══════════════════════════════
+   REFERRAL SYSTEM
+═══════════════════════════════ */
+.ref-code-box{
+  background:linear-gradient(135deg,rgba(59,74,47,0.25),rgba(92,61,30,0.15));
+  border:1px solid rgba(107,140,82,0.3);
+  border-radius:8px;padding:28px 24px;text-align:center;margin-bottom:24px;
+  position:relative;overflow:hidden;
+}
+.ref-code-box::before{content:'🌿';position:absolute;font-size:5rem;opacity:0.05;top:50%;left:10%;transform:translateY(-50%);}
+.ref-code-box::after{content:'🙏';position:absolute;font-size:5rem;opacity:0.05;top:50%;right:10%;transform:translateY(-50%);}
+.ref-label{font-size:0.65rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(150,176,125,0.5);margin-bottom:12px;}
+.ref-code-display{
+  font-family:'Playfair Display',serif;font-weight:700;
+  font-size:2.2rem;letter-spacing:6px;color:var(--parch);
+  background:rgba(59,74,47,0.3);border:1px solid rgba(107,140,82,0.35);
+  border-radius:6px;padding:14px 28px;display:inline-block;margin-bottom:14px;
+}
+.ref-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.ref-copy-btn{
+  padding:10px 24px;border-radius:4px;border:1px solid rgba(107,140,82,0.35);
+  background:rgba(107,140,82,0.15);color:var(--sage);
+  font-family:'Lato';font-weight:700;font-size:0.78rem;letter-spacing:2px;text-transform:uppercase;
+  cursor:pointer;transition:all 0.18s;
+}
+.ref-copy-btn:hover{background:rgba(107,140,82,0.28);}
+.ref-share-btn{
+  padding:10px 24px;border-radius:4px;border:1px solid rgba(160,106,58,0.3);
+  background:rgba(92,61,30,0.2);color:var(--sand);
+  font-family:'Lato';font-weight:700;font-size:0.78rem;letter-spacing:2px;text-transform:uppercase;
+  cursor:pointer;transition:all 0.18s;
+}
+.ref-share-btn:hover{background:rgba(92,61,30,0.35);}
+.ref-stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px;}
+.ref-stat{background:rgba(59,74,47,0.1);border:1px solid var(--bdr);border-radius:5px;padding:16px 10px;text-align:center;}
+.ref-stat .rv{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--parch);display:block;}
+.ref-stat .rl{font-size:0.62rem;letter-spacing:1.5px;color:rgba(196,212,175,0.35);text-transform:uppercase;display:block;margin-top:3px;}
+
+.ref-members{display:flex;flex-direction:column;gap:8px;}
+.ref-member-card{
+  display:flex;align-items:center;gap:14px;padding:14px 18px;
+  background:rgba(59,74,47,0.07);border:1px solid rgba(107,140,82,0.12);
+  border-radius:5px;transition:border-color 0.18s;
+}
+.ref-member-card:hover{border-color:rgba(107,140,82,0.25);}
+.ref-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--moss),var(--fern));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display';font-size:1rem;color:var(--parch);flex-shrink:0;}
+.ref-info{flex:1;}
+.ref-mname{font-weight:700;font-size:0.95rem;color:var(--parch);}
+.ref-msub{font-size:0.75rem;color:rgba(196,212,175,0.38);margin-top:2px;font-style:italic;}
+.ref-mscore-col{text-align:right;}
+.ref-mjap{font-family:'Playfair Display';font-size:1.1rem;color:var(--sage);}
+.ref-mstreak{font-size:0.72rem;color:rgba(212,169,106,0.55);display:block;margin-top:2px;}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;z-index:100;background:rgba(10,8,4,0.8);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:20px;}
+.modal-overlay.open{display:flex;}
+.modal-box{background:#1A1C14;border:1px solid rgba(107,140,82,0.28);border-radius:8px;padding:36px 32px;width:100%;max-width:400px;box-shadow:0 40px 80px rgba(0,0,0,0.6);position:relative;max-height:85vh;overflow-y:auto;}
+.modal-box h3{font-family:'Playfair Display',serif;font-weight:600;font-size:1.3rem;color:var(--parch);margin-bottom:6px;}
+.modal-box p{font-style:italic;color:rgba(245,237,216,0.38);font-size:0.88rem;margin-bottom:24px;}
+.modal-close{position:absolute;top:14px;right:16px;background:transparent;border:none;color:rgba(196,212,175,0.3);font-size:1.1rem;cursor:pointer;transition:color 0.2s;}
+.modal-close:hover{color:var(--sage);}
+.reminder-list{display:flex;flex-direction:column;gap:8px;margin-bottom:20px;}
+.reminder-item{display:flex;align-items:center;gap:10px;padding:11px 14px;background:rgba(59,74,47,0.1);border:1px solid rgba(107,140,82,0.15);border-radius:4px;}
+.reminder-item input[type=time]{background:rgba(245,237,216,0.06);border:1px solid rgba(107,140,82,0.2);border-radius:3px;color:var(--cream);padding:5px 10px;font-family:'Lato';font-size:0.9rem;outline:none;color-scheme:dark;}
+.reminder-item label{flex:1;font-size:0.85rem;color:rgba(245,237,216,0.6);}
+.reminder-item button{background:transparent;border:none;color:rgba(196,100,100,0.4);cursor:pointer;font-size:0.85rem;transition:color 0.2s;}
+.reminder-item button:hover{color:rgba(196,100,100,0.7);}
+.add-reminder-row{display:flex;gap:8px;align-items:center;}
+.add-reminder-row input[type=time]{background:rgba(245,237,216,0.05);border:1px solid rgba(107,140,82,0.2);border-radius:3px;color:var(--cream);padding:8px 12px;font-family:'Lato';font-size:0.9rem;outline:none;color-scheme:dark;flex:1;}
+.add-reminder-row input:focus{border-color:var(--leaf);}
+
+.foot{text-align:center;margin-top:40px;}
+.btn-signout{background:transparent;border:none;color:rgba(196,212,175,0.2);font-family:'Lato';font-size:0.8rem;cursor:pointer;transition:color 0.2s;letter-spacing:1px;}
+.btn-signout:hover{color:rgba(196,100,100,0.45);}
+
+/* Leaderboard visibility toggle */
+.lb-vis-btn{
+  padding:8px 20px;border-radius:20px;
+  font-family:'Lato';font-weight:700;font-size:0.72rem;letter-spacing:1.5px;text-transform:uppercase;
+  cursor:pointer;transition:all 0.22s;border:1px solid;
+}
+.lb-vis-visible{
+  background:rgba(107,140,82,0.12);
+  color:var(--sage);
+  border-color:rgba(107,140,82,0.3);
+}
+.lb-vis-visible:hover{background:rgba(196,80,80,0.1);color:rgba(210,130,130,0.8);border-color:rgba(196,80,80,0.25);}
+.lb-vis-hidden{
+  background:rgba(196,80,80,0.08);
+  color:rgba(210,130,130,0.7);
+  border-color:rgba(196,80,80,0.25);
+}
+.lb-vis-hidden:hover{background:rgba(107,140,82,0.12);color:var(--sage);border-color:rgba(107,140,82,0.3);}
+
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(70px);background:linear-gradient(135deg,var(--moss),var(--fern));color:var(--parch);padding:11px 28px;border-radius:4px;font-family:'Playfair Display',serif;font-style:italic;font-size:0.95rem;box-shadow:0 8px 32px rgba(0,0,0,0.4);transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1);z-index:200;pointer-events:none;white-space:nowrap;}
+.toast.show{transform:translateX(-50%) translateY(0);}
+::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:transparent;}::-webkit-scrollbar-thumb{background:rgba(107,140,82,0.2);border-radius:3px;}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="site-domain">sitaram . life</div>
+  <div class="tagline">naam jap · daily sadhana · community</div>
+</header>
+
+<div class="orn"><div class="orn-inner">✦ &nbsp; नाम जप &nbsp; ✦</div></div>
+
+<!-- GUIDANCE MESSAGE -->
+<div class="guidance-banner">
+  <div class="guidance-icon">🙏</div>
+  <div class="guidance-text">
+    <p class="guidance-hindi">यदि आप गुरु से दीक्षित हैं, तो गुरु द्वारा दिए गए मंत्र का जाप करना ही श्रेष्ठ है। यदि दीक्षा नहीं ली है, तो सीताराम, राधे जैसे नाम-जाप करना उचित है। गुरु दीक्षा के बिना वैदिक मंत्रों का जाप करना उचित नहीं माना जाता।</p>
+    <p class="guidance-english">If you are dikshit by a Guru, it is advised to chant the mantra given by your Guru. Even if you are not, you can do Naam Jaap like Sitaram, Radhe, etc. It is not advised to chant Vedic mantras without Guru Diksha.</p>
+  </div>
+</div>
+
+<!-- JOIN -->
+<div id="join-screen">
+  <div class="join-card">
+    <h2 id="join-title">Join the Sangat</h2>
+    <p id="join-subtitle">Create your account to begin sadhana</p>
+    <div class="field">
+      <label>Your Name</label>
+      <input type="text" id="join-name" placeholder="e.g. Sita Devi" maxlength="30" autocomplete="off">
+    </div>
+    <div class="field" id="join-pw-field">
+      <label id="join-pw-label">Set Your Password <span style="font-weight:300;letter-spacing:0;text-transform:none;font-style:italic;font-size:0.75rem;color:rgba(196,212,175,0.3)">(protects your account)</span></label>
+      <input type="password" id="join-pw" placeholder="Choose a password" maxlength="50" autocomplete="new-password">
+    </div>
+    <div class="field" id="join-sq-wrap">
+      <label>Security Question <span style="font-weight:300;letter-spacing:0;text-transform:none;font-style:italic;font-size:0.75rem;color:rgba(196,212,175,0.3)">(for password recovery)</span></label>
+      <select id="join-sq" style="width:100%;padding:11px 14px;background:rgba(245,237,216,0.05);border:1px solid rgba(107,140,82,0.25);border-radius:4px;color:var(--cream);font-family:'Lato';font-size:0.9rem;outline:none;margin-bottom:8px;color-scheme:dark;">
+        <option value="">— Choose a question —</option>
+        <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
+        <option value="What was the name of your first pet?">What was the name of your first pet?</option>
+        <option value="What city were you born in?">What city were you born in?</option>
+        <option value="What is the name of your Guru?">What is the name of your Guru?</option>
+        <option value="What is your favourite naam?">What is your favourite naam?</option>
+        <option value="What was your childhood nickname?">What was your childhood nickname?</option>
+      </select>
+      <input type="text" id="join-sa" placeholder="Your answer (case-insensitive)" maxlength="80" autocomplete="off" style="width:100%;padding:13px 16px;background:rgba(245,237,216,0.05);border:1px solid rgba(107,140,82,0.25);border-radius:4px;color:var(--cream);font-family:'Lato';font-size:1rem;outline:none;">
+    </div>
+    <div class="field">
+      <label>Referral Code <span style="font-weight:300;letter-spacing:0;text-transform:none;font-style:italic;font-size:0.75rem;color:rgba(196,212,175,0.3)">(optional)</span></label>
+      <input type="text" id="join-ref" placeholder="e.g. RAM•108" maxlength="12" autocomplete="off" style="text-transform:uppercase;letter-spacing:3px;">
+    </div>
+    <button class="join-btn" onclick="doJoin()">Begin &nbsp;✦&nbsp; प्रारम्भ</button>
+    <div style="text-align:center;margin-top:10px;">
+      <button id="forgot-pw-btn" onclick="openForgotPassword()" style="display:none;background:transparent;border:none;color:rgba(212,169,106,0.5);font-family:'Lato';font-size:0.78rem;cursor:pointer;letter-spacing:1px;text-decoration:underline;text-underline-offset:3px;">Forgot password?</button>
+    </div>
+    <p class="ref-hint" id="join-ref-hint">Have a friend's referral code? Enter it above.</p>
+    <div class="err" id="join-err">Please enter your name and password.</div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app-screen">
+  <nav class="nav-bar">
+    <button class="nav-btn active" onclick="goTab('sadhana',this)">🌿 Sadhana</button>
+    <button class="nav-btn" onclick="goTab('leaderboard',this)">🏆 Board</button>
+    <button class="nav-btn" onclick="goTab('sangat',this)">🙏 Sangat</button>
+    <button class="nav-btn" onclick="goTab('blog',this)">📖 Blog</button>
+    <button class="nav-btn" onclick="goTab('referral',this)">🔗 Referral</button>
+  </nav>
+
+  <!-- ═════ SADHANA ═════ -->
+  <div class="tab active" id="tab-sadhana">
+    <div class="user-strip">
+      <div class="u-avatar" id="u-av">?</div>
+      <div class="u-info">
+        <div class="u-name" id="u-name">—</div>
+        <div class="u-sub" id="u-sub">loading…</div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;flex-shrink:0;">
+        <div class="streak-pill" id="streak-pill">🔥 0 days</div>
+        <button class="btn-sm" style="padding:7px 12px;font-size:0.75rem;background:rgba(59,74,47,0.2);border-color:rgba(107,140,82,0.2);color:rgba(196,212,175,0.45);" onclick="openUserSettings()" title="Account Settings">⚙️</button>
+      </div>
+    </div>
+    <div class="counter-hero">
+      <div class="goal-ring-wrap">
+        <svg class="goal-ring-svg" viewBox="0 0 140 140">
+          <defs><linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3B4A2F"/><stop offset="50%" stop-color="#6B8C52"/><stop offset="100%" stop-color="#96B07D"/></linearGradient></defs>
+          <circle class="ring-bg" cx="70" cy="70" r="65"/>
+          <circle class="ring-prog" id="ring-prog" cx="70" cy="70" r="65"/>
+        </svg>
+        <div class="ring-center">
+          <div class="big-count" id="big-count">0</div>
+          <div class="ring-label">Today</div>
+        </div>
+      </div>
+      <div class="goal-progress-txt">Goal: <span id="goal-done">0</span> / <span id="goal-target">108</span></div>
+      <div class="ctr-btns">
+        <button class="ctr-btn btn-mala" onclick="addJap(108)">+ 1 Mala (108)</button>
+        <button class="ctr-btn btn-main" onclick="addJap(1)">+ 1 Jap 🙏</button>
+        <button class="ctr-btn btn-ghost" onclick="undoJap()">↩ Undo</button>
+        <button class="ctr-btn btn-ghost" style="color:rgba(196,100,100,0.45);border-color:rgba(196,100,100,0.15);" onclick="resetTodayJap()">⟳ Reset</button>
+      </div>
+      <div class="custom-row">
+        <input type="number" id="jap-custom" placeholder="27" min="1" max="9999">
+        <button class="btn-sm" onclick="addCustom()">Add Custom</button>
+      </div>
+      <div class="goal-setter">
+        <label>Daily Goal</label>
+        <input type="number" id="goal-input" placeholder="108" min="1" max="100000">
+        <button class="btn-sm" onclick="saveGoal()">Set Goal</button>
+        <button class="btn-sm" style="background:rgba(92,61,30,0.2);color:var(--sand);border-color:rgba(160,106,58,0.25);" onclick="openReminders()">⏰ Reminders</button>
+      </div>
+      <!-- Leaderboard visibility toggle -->
+      <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(107,140,82,0.1);display:flex;align-items:center;justify-content:center;gap:10px;">
+        <button id="lb-visibility-btn" onclick="toggleMyLbVisibility()" class="lb-vis-btn lb-vis-visible">
+          👁 Showing on Leaderboard
+        </button>
+      </div>
+    </div>
+    <div class="stats-grid">
+      <div class="stt"><span class="stt-v" id="st-today">0</span><span class="stt-l">Today</span></div>
+      <div class="stt"><span class="stt-v" id="st-week">0</span><span class="stt-l">This Week</span></div>
+      <div class="stt"><span class="stt-v" id="st-month">0</span><span class="stt-l">This Month</span></div>
+      <div class="stt"><span class="stt-v" id="st-total">0</span><span class="stt-l">All Time</span></div>
+    </div>
+    <div class="section-label">Today's Journal</div>
+    <div class="journal-form">
+      <textarea id="journal-input" placeholder="Reflect on your practice… how did today's naam jap feel?" rows="3"></textarea>
+      <div class="journal-form-btns">
+        <button class="btn-sm" style="background:transparent;border-color:rgba(196,212,175,0.1);color:rgba(196,212,175,0.3);" onclick="document.getElementById('journal-input').value=''">Clear</button>
+        <button class="btn-sm" onclick="saveJournalEntry()">Save Entry 🌿</button>
+      </div>
+    </div>
+    <div class="journal-entries" id="journal-entries"><div class="j-empty">Your reflections will appear here…</div></div>
+    <div class="section-label" style="margin-top:20px;">Practice History</div>
+    <div id="hist-wrap"><div class="hist-empty">Start your first practice to see history.</div></div>
+  </div>
+
+  <!-- ═════ LEADERBOARD ═════ -->
+  <div class="tab" id="tab-leaderboard">
+    <div class="lb-head">
+      <h2>Community Leaderboard</h2>
+      <p>Let the sangat inspire your practice</p>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
+      <div class="filter-pills" style="margin-bottom:0;">
+        <button class="f-pill active" onclick="setLbF('today',this)">Today</button>
+        <button class="f-pill" onclick="setLbF('week',this)">This Week</button>
+        <button class="f-pill" onclick="setLbF('month',this)">This Month</button>
+        <button class="f-pill" onclick="setLbF('alltime',this)">All Time</button>
+      </div>
+      <button class="btn-sm" id="lb-admin-btn" style="background:rgba(92,61,30,0.15);color:rgba(212,169,106,0.5);border-color:rgba(160,106,58,0.2);font-size:0.68rem;" onclick="toggleLbAdmin()">Admin</button>
+    </div>
+    <div id="lb-admin-bar" style="display:none;background:rgba(196,80,80,0.07);border:1px solid rgba(196,80,80,0.18);border-radius:6px;padding:12px 16px;margin-bottom:14px;font-size:0.8rem;color:rgba(220,140,140,0.7);font-style:italic;">
+      🗑 Admin mode active — click <strong style="color:rgba(220,100,100,0.9)">Remove</strong> on any member to hide them from the leaderboard
+      <button onclick="toggleLbAdmin()" style="float:right;background:transparent;border:none;color:rgba(196,120,120,0.5);cursor:pointer;font-size:0.9rem;font-family:'Lato';">Done</button>
+    </div>
+    <div class="lb-cards" id="lb-cards"></div>
+  </div>
+
+  <!-- ═════ SANGAT ═════ -->
+  <div class="tab" id="tab-sangat">
+    <div class="sangat-head"><h2>The Sangat</h2><p id="sangat-count">…</p></div>
+    <!-- My card quick-edit panel -->
+    <div id="sangat-edit-panel" style="display:none;background:rgba(59,74,47,0.12);border:1px solid rgba(107,140,82,0.25);border-radius:6px;padding:18px 20px;margin-bottom:18px;">
+      <div class="section-label" style="margin-top:0;">✏️ Edit My Card</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div class="field" style="margin-bottom:0;">
+          <label>Display Name</label>
+          <input type="text" id="sangat-edit-name" placeholder="Name shown on your card" maxlength="30" style="width:100%;padding:10px 14px;background:rgba(245,237,216,0.05);border:1px solid rgba(107,140,82,0.22);border-radius:4px;color:var(--cream);font-family:'Lato';font-size:0.95rem;outline:none;">
+        </div>
+        <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:0.88rem;color:rgba(245,237,216,0.65);">
+          <input type="checkbox" id="sangat-edit-hide" style="width:16px;height:16px;accent-color:var(--leaf);cursor:pointer;">
+          Hide my card from Sangat
+        </label>
+        <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:4px;">
+          <button class="btn-sm" style="background:transparent;border-color:rgba(196,212,175,0.1);color:rgba(196,212,175,0.3);" onclick="closeSangatEdit()">Cancel</button>
+          <button class="btn-sm" onclick="saveSangatEdit()">Save Changes 🌿</button>
+        </div>
+      </div>
+    </div>
+    <div class="sangat-grid" id="sangat-grid"></div>
+  </div>
+
+  <!-- ═════ BLOG ═════ -->
+  <div class="tab" id="tab-blog">
+    <!-- Blog list -->
+    <div id="blog-list-view">
+      <div class="blog-head">
+        <h2>The Wisdom Garden</h2>
+        <p>Reflections on the significance and secret of Naam Jap</p>
+      </div>
+      <!-- Admin add post panel (shown only to admin) -->
+      <div id="admin-panel" style="display:none;margin-bottom:24px;">
+        <div class="section-label">✍️ Write New Article</div>
+        <div class="admin-blog-form">
+          <input type="text" id="blog-title-input" placeholder="Article title…">
+          <input type="text" id="blog-excerpt-input" placeholder="Short excerpt / teaser (1-2 sentences)…">
+          <select id="blog-tag-input">
+            <option value="Significance">Significance</option>
+            <option value="Secret">Secret</option>
+            <option value="Practice">Practice</option>
+            <option value="Story">Story</option>
+            <option value="Teaching">Teaching</option>
+          </select>
+          <textarea id="blog-body-input" placeholder="Write the full article here. Use blank lines for paragraphs. Start a line with ### for a heading. Start with > for a blockquote."></textarea>
+          <div style="display:flex;justify-content:flex-end;gap:8px;">
+            <button class="btn-sm" style="background:transparent;border-color:rgba(196,212,175,0.1);color:rgba(196,212,175,0.3);" onclick="clearBlogForm()">Clear</button>
+            <button class="btn-sm" onclick="publishBlogPost()">Publish Article 🌿</button>
+          </div>
+        </div>
+      </div>
+      <div id="blog-admin-toggle" style="text-align:right;margin-bottom:16px;">
+        <button class="btn-sm" style="font-size:0.7rem;letter-spacing:1px;background:rgba(92,61,30,0.15);color:rgba(212,169,106,0.5);border-color:rgba(160,106,58,0.2);" onclick="toggleAdminPanel()">Admin</button>
+      </div>
+      <div id="blog-grid"></div>
+    </div>
+    <!-- Full article view -->
+    <div id="blog-article">
+      <button class="article-back" onclick="closeBlogArticle()">← Back to Blog</button>
+      <div id="article-content"></div>
+    </div>
+  </div>
+
+  <!-- ═════ REFERRAL ═════ -->
+  <div class="tab" id="tab-referral">
+    <div class="ref-head">
+      <h2>Your Referral Circle</h2>
+      <p>Share your unique code — those who use it appear here</p>
+    </div>
+    <div class="ref-code-box">
+      <div class="ref-label">Your Unique Code</div>
+      <div class="ref-code-display" id="my-ref-code">—</div>
+      <div class="ref-actions">
+        <button class="ref-copy-btn" onclick="copyRefCode()">📋 Copy Code</button>
+        <button class="ref-copy-btn" onclick="copyRefLink()" style="background:rgba(59,74,47,0.25);">🔗 Copy Link</button>
+        <button class="ref-share-btn" onclick="shareRef()">📤 Share</button>
+      </div>
+    </div>
+    <div class="ref-stats-row">
+      <div class="ref-stat"><span class="rv" id="ref-count-total">0</span><span class="rl">Members Referred</span></div>
+      <div class="ref-stat"><span class="rv" id="ref-jap-total">0</span><span class="rl">Circle's Jap Total</span></div>
+      <div class="ref-stat"><span class="rv" id="ref-active-today">0</span><span class="rl">Active Today</span></div>
+    </div>
+    <div class="section-label">Members in Your Circle</div>
+    <div id="ref-members-list"><div class="ref-empty">No one has joined with your code yet. Share it with your sangat! 🙏</div></div>
+  </div>
+
+  <div class="foot"><button class="btn-signout" onclick="doSignout()">leave session</button></div>
+</div>
+</div>
+
+<!-- REMINDER MODAL -->
+<div class="modal-overlay" id="reminder-modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeReminders()">✕</button>
+    <h3>⏰ Daily Reminders</h3>
+    <p>Set times to be reminded for your naam jap</p>
+    <div class="reminder-list" id="reminder-list"></div>
+    <div class="add-reminder-row">
+      <input type="time" id="new-reminder-time">
+      <button class="btn-sm" onclick="addReminder()">+ Add</button>
+    </div>
+    <div style="margin-top:16px;"><button class="join-btn" style="font-size:0.72rem;padding:11px;" onclick="saveReminders()">Save Reminders</button></div>
+  </div>
+</div>
+
+<!-- ADMIN PASSWORD MODAL -->
+<div class="modal-overlay" id="admin-modal">
+  <div class="modal-box" style="max-width:340px;">
+    <button class="modal-close" onclick="closeAdminModal()">✕</button>
+    <h3>Admin Access</h3>
+    <p>Enter the admin password to publish articles</p>
+    <div class="field"><label>Password</label><input type="password" id="admin-pw-input" placeholder="Enter password" autocomplete="off"></div>
+    <div style="margin-top:6px;"><button class="join-btn" style="font-size:0.72rem;padding:11px;" onclick="checkAdminPw()">Enter</button></div>
+    <div class="err" id="admin-err">Incorrect password.</div>
+  </div>
+</div>
+
+<!-- USER AUTH MODAL (login with password to unlock own section) -->
+<div class="modal-overlay" id="user-auth-modal">
+  <div class="modal-box" style="max-width:360px;">
+    <button class="modal-close" onclick="closeUserAuthModal()">✕</button>
+    <h3 id="user-auth-title">🔐 Enter Your Password</h3>
+    <p id="user-auth-desc">Authenticate to access your settings</p>
+    <div class="field"><label>Password</label><input type="password" id="user-auth-pw" placeholder="Your password" autocomplete="off"></div>
+    <div style="margin-top:6px;"><button class="join-btn" style="font-size:0.72rem;padding:11px;" onclick="checkUserAuth()">Unlock</button></div>
+    <div class="err" id="user-auth-err">Incorrect password. Try again.</div>
+  </div>
+</div>
+
+<!-- USER SETTINGS MODAL -->
+<div class="modal-overlay" id="user-settings-modal">
+  <div class="modal-box" style="max-width:400px;">
+    <button class="modal-close" onclick="closeUserSettings()">✕</button>
+    <h3>⚙️ Account Settings</h3>
+    <p id="settings-username-label">Managing your account</p>
+
+    <div class="section-label" style="margin-top:0;">Change Password</div>
+    <div class="field" style="margin-bottom:12px;">
+      <label>New Password</label>
+      <input type="password" id="settings-new-pw" placeholder="Enter new password" autocomplete="new-password">
+    </div>
+    <div class="field" style="margin-bottom:16px;">
+      <label>Confirm Password</label>
+      <input type="password" id="settings-confirm-pw" placeholder="Confirm new password" autocomplete="new-password">
+    </div>
+    <button class="join-btn" style="font-size:0.72rem;padding:11px;margin-bottom:20px;" onclick="saveNewPassword()">Save New Password</button>
+
+    <div class="section-label">Display Name</div>
+    <div class="field" style="margin-bottom:12px;">
+      <label>Name shown on Leaderboard & Sangat</label>
+      <input type="text" id="settings-display-name" placeholder="Your display name" maxlength="30">
+    </div>
+    <button class="join-btn" style="font-size:0.72rem;padding:11px;margin-bottom:20px;background:linear-gradient(135deg,var(--earth),var(--clay));" onclick="saveDisplayName()">Save Display Name</button>
+
+    <div class="section-label">Visibility</div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">
+      <label style="display:flex;align-items:center;gap:12px;cursor:pointer;font-size:0.88rem;color:rgba(245,237,216,0.65);">
+        <input type="checkbox" id="settings-hide-lb" style="width:16px;height:16px;accent-color:var(--leaf);cursor:pointer;">
+        Hide me from Leaderboard
+      </label>
+      <label style="display:flex;align-items:center;gap:12px;cursor:pointer;font-size:0.88rem;color:rgba(245,237,216,0.65);">
+        <input type="checkbox" id="settings-hide-sangat" style="width:16px;height:16px;accent-color:var(--leaf);cursor:pointer;">
+        Hide me from Sangat
+      </label>
+    </div>
+    <button class="join-btn" style="font-size:0.72rem;padding:11px;background:linear-gradient(135deg,var(--moss),var(--fern));" onclick="saveVisibility()">Save Visibility</button>
+
+    <div class="section-label" style="margin-top:4px;">Security Question</div>
+    <p style="font-size:0.8rem;font-style:italic;color:rgba(196,212,175,0.38);margin-bottom:12px;">Used to recover your password if forgotten</p>
+    <div class="field" style="margin-bottom:10px;">
+      <label>Question</label>
+      <select id="settings-sq" style="width:100%;padding:11px 14px;background:rgba(245,237,216,0.05);border:1px solid rgba(107,140,82,0.25);border-radius:4px;color:var(--cream);font-family:'Lato';font-size:0.9rem;outline:none;color-scheme:dark;">
+        <option value="">— Choose a question —</option>
+        <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
+        <option value="What was the name of your first pet?">What was the name of your first pet?</option>
+        <option value="What city were you born in?">What city were you born in?</option>
+        <option value="What is the name of your Guru?">What is the name of your Guru?</option>
+        <option value="What is your favourite naam?">What is your favourite naam?</option>
+        <option value="What was your childhood nickname?">What was your childhood nickname?</option>
+      </select>
+    </div>
+    <div class="field" style="margin-bottom:14px;">
+      <label>Answer</label>
+      <input type="text" id="settings-sa" placeholder="Your answer" maxlength="80">
+    </div>
+    <button class="join-btn" style="font-size:0.72rem;padding:11px;margin-bottom:4px;background:linear-gradient(135deg,#3B4A2F,#516640);" onclick="saveSecurityQuestion()">Save Security Question</button>
+
+    <div class="err" id="settings-err" style="margin-top:12px;"></div>
+  </div>
+</div>
+
+<!-- FORGOT PASSWORD MODAL -->
+<div class="modal-overlay" id="forgot-modal">
+  <div class="modal-box" style="max-width:380px;">
+    <button class="modal-close" onclick="closeForgotModal()">✕</button>
+    <h3>🔑 Password Recovery</h3>
+    <p id="forgot-modal-desc">Answer your security question to reset your password</p>
+
+    <!-- Step 1: show question, ask answer -->
+    <div id="forgot-step-1">
+      <div style="background:rgba(59,74,47,0.12);border:1px solid rgba(107,140,82,0.2);border-radius:4px;padding:14px 16px;margin-bottom:16px;">
+        <div style="font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:rgba(150,176,125,0.5);margin-bottom:6px;font-family:'Lato';">Your Security Question</div>
+        <div id="forgot-question-text" style="font-family:'Playfair Display',serif;font-style:italic;color:rgba(245,237,216,0.75);font-size:0.95rem;line-height:1.5;"></div>
+      </div>
+      <div class="field" style="margin-bottom:14px;">
+        <label>Your Answer</label>
+        <input type="text" id="forgot-answer" placeholder="Enter your answer" autocomplete="off">
+      </div>
+      <button class="join-btn" style="font-size:0.72rem;padding:11px;" onclick="checkSecurityAnswer()">Verify Answer</button>
+      <div class="err" id="forgot-err" style="margin-top:10px;">Incorrect answer. Try again.</div>
+    </div>
+
+    <!-- Step 2: set new password -->
+    <div id="forgot-step-2" style="display:none;">
+      <div style="background:rgba(59,74,47,0.15);border:1px solid rgba(107,140,82,0.25);border-radius:4px;padding:10px 14px;margin-bottom:16px;font-size:0.82rem;color:rgba(150,176,125,0.7);font-style:italic;">
+        ✅ Identity verified. Set your new password below.
+      </div>
+      <div class="field" style="margin-bottom:12px;">
+        <label>New Password</label>
+        <input type="password" id="forgot-new-pw" placeholder="Enter new password" autocomplete="new-password">
+      </div>
+      <div class="field" style="margin-bottom:14px;">
+        <label>Confirm Password</label>
+        <input type="password" id="forgot-confirm-pw" placeholder="Confirm new password" autocomplete="new-password">
+      </div>
+      <button class="join-btn" style="font-size:0.72rem;padding:11px;" onclick="resetPasswordFromForgot()">Reset Password</button>
+      <div class="err" id="forgot-reset-err" style="margin-top:10px;">Passwords do not match.</div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ══════════════════════════════════════
+// CONFIG — Change these!
+// ══════════════════════════════════════
+const ADMIN_PASSWORD = 'sitaram108'; // Change this!
+const SK = 'sitaram4_v1';
+
+// ══════════════════════════════════════
+// DEFAULT BLOG POSTS
+// ══════════════════════════════════════
+const DEFAULT_POSTS = [];
+
+// ══════════════════════════════════════
+// DATA LAYER
+// ══════════════════════════════════════
+function load(){try{return JSON.parse(localStorage.getItem(SK))||{users:{},posts:[]};}catch{return{users:{},posts:[]};}}
+function save(d){localStorage.setItem(SK,JSON.stringify(d));}
+function today(){return new Date().toISOString().split('T')[0];}
+function monthKey(){const d=new Date();return d.getFullYear()+'-'+(d.getMonth()+1).toString().padStart(2,'0');}
+
+function ensureUser(name, refCode, password, secQ, secA){
+  const d=load();
+  if(!d.users[name]){
+    const prefix = name.replace(/[^a-zA-Z]/g,'').substring(0,3).toUpperCase() || 'SAR';
+    const suffix = Math.floor(100+Math.random()*900).toString();
+    const myCode = prefix + '•' + suffix;
+    d.users[name]={
+      joinedAt: new Date().toISOString(),
+      jap:{}, journal:[], goal:108, reminders:[],
+      refCode: myCode,
+      referredBy: refCode||null,
+      password: password||null,
+      displayName: null,
+      hiddenFromLb: false,
+      hiddenFromSangat: false,
+      securityQuestion: secQ||null,
+      securityAnswer: secA||null
+    };
+  }
+  save(d); return d;
+}
+
+function sumDays(hist,n){const now=new Date();let t=0;for(let i=0;i<n;i++){const dd=new Date(now);dd.setDate(now.getDate()-i);t+=hist[dd.toISOString().split('T')[0]]||0;}return t;}
+function sumMonth(hist){const mk=monthKey();let t=0;Object.entries(hist).forEach(([k,v])=>{if(k.startsWith(mk))t+=v;});return t;}
+function allTime(hist){return Object.values(hist).reduce((a,b)=>a+b,0);}
+function getStreak(name){
+  const d=load();const jap=d.users[name]?.jap||{};
+  const now=new Date();let s=0;
+  for(let i=0;i<365;i++){const dd=new Date(now);dd.setDate(now.getDate()-i);const k=dd.toISOString().split('T')[0];if((jap[k]||0)>0)s++;else if(i>0)break;}
+  return s;
+}
+function fmt(n){if(n>=1000)return(n/1000).toFixed(1)+'k';return n.toString();}
+function fmtDate(s){
+  const yest=new Date();yest.setDate(yest.getDate()-1);
+  if(s===today())return'Today';
+  if(s===yest.toISOString().split('T')[0])return'Yesterday';
+  return new Date(s+'T00:00:00').toLocaleDateString('en-IN',{weekday:'short',day:'numeric',month:'short'});
+}
+function fmtLongDate(s){return new Date(s+'T00:00:00').toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'});}
+
+// ══════════════════════════════════════
+// STATE
+// ══════════════════════════════════════
+let me=null, lbFilter='today', adminUnlocked=false, pendingReminders=[];
+
+// ══════════════════════════════════════
+// AUTH
+// ══════════════════════════════════════
+function doJoin(){
+  const name = document.getElementById('join-name').value.trim();
+  const pw   = document.getElementById('join-pw').value.trim();
+  const ref  = document.getElementById('join-ref').value.trim().toUpperCase();
+  if(!name){ document.getElementById('join-err').classList.add('show'); return; }
+
+  const d = load();
+  const existing = d.users[name];
+
+  if(existing){
+    // Returning user — verify password
+    if(existing.password && pw !== existing.password){
+      document.getElementById('join-err').textContent = 'Incorrect password for "'+name+'". Try again.';
+      document.getElementById('join-err').classList.add('show');
+      return;
+    }
+  } else {
+    // New user — password required
+    if(!pw){
+      document.getElementById('join-err').textContent = 'Please choose a password to protect your account.';
+      document.getElementById('join-err').classList.add('show');
+      return;
+    }
+  }
+
+  document.getElementById('join-err').classList.remove('show');
+  if(ref){
+    const refOwner=Object.entries(d.users).find(([,u])=>u.refCode===ref);
+    if(!refOwner) toast('⚠️ Referral code not found, joining without it');
+  }
+  const sq = document.getElementById('join-sq') ? document.getElementById('join-sq').value : '';
+  const sa = document.getElementById('join-sa') ? document.getElementById('join-sa').value.trim().toLowerCase() : '';
+  ensureUser(name, ref||null, pw, sq, sa);
+  me = name;
+  localStorage.setItem('sitaram4_me', name);
+  launchApp();
+}
+
+function updateJoinUI(){
+  const name = document.getElementById('join-name').value.trim();
+  if(!name){ resetJoinUI(); return; }
+  const d = load();
+  const existing = d.users[name];
+  if(existing){
+    document.getElementById('join-title').textContent = 'Welcome back, '+name+' 🙏';
+    document.getElementById('join-subtitle').textContent = 'Enter your password to continue';
+    document.getElementById('join-pw-label').textContent = 'Your Password';
+    document.getElementById('join-pw').placeholder = 'Enter your password';
+    document.getElementById('join-ref').parentElement.style.display = 'none';
+    document.getElementById('join-ref-hint').style.display = 'none';
+    document.getElementById('join-sq-wrap').style.display = 'none';
+    // Show forgot password link only if they have a security question set
+    const hasSQ = existing.securityQuestion && existing.securityAnswer;
+    document.getElementById('forgot-pw-btn').style.display = hasSQ ? 'inline-block' : 'none';
+  } else {
+    resetJoinUI();
+  }
+}
+function resetJoinUI(){
+  document.getElementById('join-title').textContent = 'Join the Sangat';
+  document.getElementById('join-subtitle').textContent = 'Create your account to begin sadhana';
+  document.getElementById('join-pw-label').innerHTML = 'Set Your Password <span style="font-weight:300;letter-spacing:0;text-transform:none;font-style:italic;font-size:0.75rem;color:rgba(196,212,175,0.3)">(protects your account)</span>';
+  document.getElementById('join-pw').placeholder = 'Choose a password';
+  document.getElementById('join-ref').parentElement.style.display = '';
+  document.getElementById('join-ref-hint').style.display = '';
+  document.getElementById('join-sq-wrap').style.display = '';
+  document.getElementById('forgot-pw-btn').style.display = 'none';
+}
+
+function doSignout(){
+  localStorage.removeItem('sitaram4_me');me=null;
+  document.getElementById('join-screen').style.display='flex';
+  document.getElementById('app-screen').style.display='none';
+  document.getElementById('join-name').value='';
+  document.getElementById('join-ref').value='';
+}
+
+// ══════════════════════════════════════
+// APP LAUNCH
+// ══════════════════════════════════════
+function launchApp(){
+  document.getElementById('join-screen').style.display='none';
+  document.getElementById('app-screen').style.display='block';
+  const d=load();document.getElementById('goal-input').value=d.users[me].goal||108;
+  initBlogPosts();
+  refreshSadhana();renderLb();renderSangat();renderBlog();renderReferral();
+}
+
+// ══════════════════════════════════════
+// SADHANA
+// ══════════════════════════════════════
+function refreshSadhana(){
+  const d=load();const u=d.users[me];const jap=u.jap||{};
+  const todayCnt=jap[today()]||0;const goal=u.goal||108;
+  const streak=getStreak(me);const total=allTime(jap);
+  document.getElementById('u-av').textContent=me.charAt(0).toUpperCase();
+  document.getElementById('u-name').textContent=me;
+  document.getElementById('u-sub').textContent=fmt(total)+' total · code: '+u.refCode;
+  document.getElementById('streak-pill').textContent='🔥 '+streak+' day'+(streak!==1?'s':'');
+  document.getElementById('big-count').textContent=fmt(todayCnt);
+  const pct=Math.min(todayCnt/goal,1);
+  document.getElementById('ring-prog').style.strokeDashoffset=408*(1-pct);
+  document.getElementById('goal-done').textContent=todayCnt.toLocaleString();
+  document.getElementById('goal-target').textContent=goal.toLocaleString();
+  document.getElementById('st-today').textContent=fmt(todayCnt);
+  document.getElementById('st-week').textContent=fmt(sumDays(jap,7));
+  document.getElementById('st-month').textContent=fmt(sumMonth(jap));
+  document.getElementById('st-total').textContent=fmt(total);
+  updateLbVisibilityBtn(!!u.hiddenFromLb);
+  renderHistory();renderJournal();
+}
+
+function renderHistory(){
+  const d=load();const jap=d.users[me]?.jap||{};
+  const dates=Object.keys(jap).sort((a,b)=>b.localeCompare(a)).slice(0,12);
+  const el=document.getElementById('hist-wrap');
+  if(!dates.length){el.innerHTML='<div class="hist-empty">Start your first practice to see history.</div>';return;}
+  el.innerHTML='<div class="hist-list">'+dates.map(dt=>`<div class="hist-row"><span class="hist-date">${fmtDate(dt)}</span><span class="hist-cnt">${jap[dt].toLocaleString()} japs</span></div>`).join('')+'</div>';
+}
+
+function modJap(delta){
+  const d=load();const k=today();
+  if(!d.users[me].jap)d.users[me].jap={};
+  d.users[me].jap[k]=Math.max(0,(d.users[me].jap[k]||0)+delta);
+  if(!d.users[me].jap[k])delete d.users[me].jap[k];
+  save(d);
+  const el=document.getElementById('big-count');
+  el.classList.remove('bump');void el.offsetWidth;el.classList.add('bump');
+  setTimeout(()=>el.classList.remove('bump'),150);
+  refreshSadhana();renderLb();renderReferral();
+}
+function addJap(n){modJap(n);if(n===108)toast('📿 Mala complete! Jai Sita Ram 🙏');}
+function undoJap(){modJap(-1);}
+function resetTodayJap(){
+  if(!confirm('Reset today\'s jap count to zero?')) return;
+  const d=load();
+  if(d.users[me].jap) delete d.users[me].jap[today()];
+  save(d);
+  const el=document.getElementById('big-count');
+  el.classList.remove('bump');void el.offsetWidth;el.classList.add('bump');
+  setTimeout(()=>el.classList.remove('bump'),150);
+  refreshSadhana();renderLb();
+  toast('🔄 Today\'s jap reset to zero');
+}
+function addCustom(){
+  const v=parseInt(document.getElementById('jap-custom').value);
+  if(!v||v<1)return;
+  document.getElementById('jap-custom').value='';
+  modJap(v);toast('🙏 +'+v+' repetitions added');
+}
+function saveGoal(){
+  const v=parseInt(document.getElementById('goal-input').value);
+  if(!v||v<1)return;
+  const d=load();d.users[me].goal=v;save(d);
+  refreshSadhana();toast('Daily goal set to '+v.toLocaleString());
+}
+
+function toggleMyLbVisibility(){
+  const d=load();
+  const current = !!d.users[me].hiddenFromLb;
+  d.users[me].hiddenFromLb = !current;
+  save(d);
+  updateLbVisibilityBtn(!current);
+  renderLb();
+  toast(!current ? '🔒 Your jap is now hidden from the leaderboard' : '👁 Your jap is now visible on the leaderboard');
+}
+
+function updateLbVisibilityBtn(isHidden){
+  const btn = document.getElementById('lb-visibility-btn');
+  if(!btn) return;
+  if(isHidden){
+    btn.textContent = '🔒 Hidden from Leaderboard';
+    btn.className = 'lb-vis-btn lb-vis-hidden';
+  } else {
+    btn.textContent = '👁 Showing on Leaderboard';
+    btn.className = 'lb-vis-btn lb-vis-visible';
+  }
+}
+
+// Journal
+function saveJournalEntry(){
+  const txt=document.getElementById('journal-input').value.trim();
+  if(!txt)return;
+  const d=load();if(!d.users[me].journal)d.users[me].journal=[];
+  d.users[me].journal.unshift({id:Date.now(),date:today(),time:new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'}),text:txt,jap:d.users[me].jap?.[today()]||0});
+  d.users[me].journal=d.users[me].journal.slice(0,50);
+  save(d);document.getElementById('journal-input').value='';
+  renderJournal();toast('🌿 Journal entry saved');
+}
+function deleteJournalEntry(id){
+  const d=load();d.users[me].journal=(d.users[me].journal||[]).filter(j=>j.id!==id);
+  save(d);renderJournal();
+}
+function renderJournal(){
+  const d=load();const entries=d.users[me]?.journal||[];
+  const el=document.getElementById('journal-entries');
+  if(!entries.length){el.innerHTML='<div class="j-empty">Your reflections will appear here…</div>';return;}
+  el.innerHTML=entries.map(e=>`
+    <div class="j-entry">
+      <div class="j-meta"><span>${fmtDate(e.date)} · ${e.time||''}</span><span style="display:flex;align-items:center;gap:8px;"><span class="j-count">📿 ${e.jap||0}</span><button class="j-del" onclick="deleteJournalEntry(${e.id})">✕</button></span></div>
+      <div class="j-text">${e.text.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
+    </div>`).join('');
+}
+
+// Reminders
+function openReminders(){
+  const d=load();pendingReminders=[...(d.users[me]?.reminders||[])];
+  renderReminderList();document.getElementById('reminder-modal').classList.add('open');
+}
+function closeReminders(){document.getElementById('reminder-modal').classList.remove('open');}
+function renderReminderList(){
+  const el=document.getElementById('reminder-list');
+  if(!pendingReminders.length){el.innerHTML='<div style="font-style:italic;color:rgba(196,212,175,0.3);font-size:0.85rem;text-align:center;padding:8px;">No reminders set yet</div>';return;}
+  el.innerHTML=pendingReminders.map((r,i)=>`<div class="reminder-item"><input type="time" value="${r}" onchange="pendingReminders[${i}]=this.value"><label>Daily naam jap reminder</label><button onclick="pendingReminders.splice(${i},1);renderReminderList()">✕</button></div>`).join('');
+}
+function addReminder(){
+  const t=document.getElementById('new-reminder-time').value;
+  if(!t)return;
+  if(!pendingReminders.includes(t))pendingReminders.push(t);
+  pendingReminders.sort();document.getElementById('new-reminder-time').value='';renderReminderList();
+}
+function saveReminders(){
+  const d=load();d.users[me].reminders=pendingReminders;save(d);
+  closeReminders();toast('⏰ Reminders saved for '+pendingReminders.length+' time'+(pendingReminders.length!==1?'s':''));
+  if('Notification' in window&&Notification.permission==='default')Notification.requestPermission().then(p=>{if(p==='granted')toast('🔔 Notifications enabled!');});
+}
+
+// ══════════════════════════════════════
+// LEADERBOARD
+// ══════════════════════════════════════
+function setLbF(f,btn){lbFilter=f;document.querySelectorAll('.f-pill').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderLb();}
+// Crore milestones: 1cr to 10cr
+const MILESTONES = [
+  {cr:1,  label:'1 Crore',  color:'#96B07D', bg:'rgba(107,140,82,0.12)',  border:'rgba(107,140,82,0.3)'},
+  {cr:2,  label:'2 Crore',  color:'#A8C48A', bg:'rgba(120,160,90,0.12)',  border:'rgba(120,160,90,0.3)'},
+  {cr:3,  label:'3 Crore',  color:'#C4C47D', bg:'rgba(160,160,80,0.12)',  border:'rgba(160,160,80,0.3)'},
+  {cr:4,  label:'4 Crore',  color:'#D4A96A', bg:'rgba(180,140,80,0.12)',  border:'rgba(180,140,80,0.3)'},
+  {cr:5,  label:'5 Crore',  color:'#D49060', bg:'rgba(180,120,70,0.12)',  border:'rgba(180,120,70,0.3)'},
+  {cr:6,  label:'6 Crore',  color:'#D47850', bg:'rgba(180,100,60,0.12)',  border:'rgba(180,100,60,0.3)'},
+  {cr:7,  label:'7 Crore',  color:'#C4705A', bg:'rgba(170,90,60,0.12)',   border:'rgba(170,90,60,0.3)'},
+  {cr:8,  label:'8 Crore',  color:'#B46A6A', bg:'rgba(160,80,70,0.12)',   border:'rgba(160,80,70,0.3)'},
+  {cr:9,  label:'9 Crore',  color:'#A07AA0', bg:'rgba(140,100,140,0.12)', border:'rgba(140,100,140,0.3)'},
+  {cr:10, label:'10 Crore 🏆', color:'#F5D78A', bg:'rgba(200,170,80,0.18)', border:'rgba(200,170,80,0.45)'},
+];
+
+function getMilestone(total) {
+  const cr = 10000000;
+  for(let i = MILESTONES.length-1; i >= 0; i--) {
+    if(total >= MILESTONES[i].cr * cr) return MILESTONES[i];
+  }
+  return null;
+}
+
+function getMilestoneProgress(total) {
+  const cr = 10000000;
+  // find next milestone
+  for(let i = 0; i < MILESTONES.length; i++) {
+    if(total < MILESTONES[i].cr * cr) {
+      const prev = i > 0 ? MILESTONES[i-1].cr * cr : 0;
+      const next = MILESTONES[i].cr * cr;
+      const pct = Math.round(((total - prev) / (next - prev)) * 100);
+      return { next: MILESTONES[i], pct, remaining: next - total };
+    }
+  }
+  return null; // completed all
+}
+
+function fmtCrore(n) {
+  if(n >= 10000000) return (n/10000000).toFixed(2).replace(/\.?0+$/,'') + ' Cr';
+  if(n >= 100000) return (n/100000).toFixed(1).replace(/\.?0+$/,'') + 'L';
+  return n.toLocaleString();
+}
+
+function renderLb(){
+  const d=load();
+  const ranked=Object.entries(d.users).map(([name,u])=>{
+    const jap=u.jap||{};let score=0;
+    if(lbFilter==='today')score=jap[today()]||0;
+    else if(lbFilter==='week')score=sumDays(jap,7);
+    else if(lbFilter==='month')score=sumMonth(jap);
+    else score=allTime(jap);
+    return{name, displayName:u.displayName||name, score,streak:getStreak(name),total:allTime(jap),hiddenFromLb:!!u.hiddenFromLb};
+  }).sort((a,b)=>b.score-a.score);
+  const medals=['🥇','🥈','🥉'];
+  const el=document.getElementById('lb-cards');
+
+  // Milestone banner (only on All Time view)
+  let milestoneBanner = '';
+  if(lbFilter==='alltime'){
+    const communityTotal = Object.values(d.users).reduce((sum,u)=>sum+allTime(u.jap||{}),0);
+    const prog = getMilestoneProgress(communityTotal);
+    const reached = getMilestone(communityTotal);
+    const cr = 10000000;
+    const bar10 = Math.min(communityTotal/(10*cr),1)*100;
+
+    milestoneBanner = `
+      <div style="background:rgba(59,74,47,0.15);border:1px solid rgba(107,140,82,0.25);border-radius:8px;padding:18px 20px;margin-bottom:18px;">
+        <div style="font-size:0.62rem;letter-spacing:3px;text-transform:uppercase;color:rgba(150,176,125,0.55);margin-bottom:8px;font-family:'Lato';">Sangat's Collective Naam Jap</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--parch);margin-bottom:4px;">${fmtCrore(communityTotal)}</div>
+        ${reached ? `<div style="font-size:0.8rem;color:${reached.color};font-style:italic;margin-bottom:10px;">✦ ${reached.label} milestone reached!</div>` : ''}
+        ${prog ? `<div style="font-size:0.75rem;color:rgba(196,212,175,0.5);margin-bottom:8px;font-style:italic;">Next: <span style="color:${prog.next.color}">${prog.next.label}</span> — ${prog.pct}% complete · ${fmtCrore(prog.remaining)} to go</div>` : '<div style="font-size:0.75rem;color:var(--sand);margin-bottom:8px;">🏆 All milestones achieved! Jai Sita Ram!</div>'}
+        <!-- Progress bar across 10cr -->
+        <div style="height:6px;background:rgba(107,140,82,0.12);border-radius:3px;overflow:hidden;">
+          <div style="height:100%;width:${bar10}%;background:linear-gradient(90deg,var(--moss),var(--leaf),var(--sage));border-radius:3px;transition:width 0.6s ease;"></div>
+        </div>
+        <!-- Milestone dots -->
+        <div style="display:flex;justify-content:space-between;margin-top:6px;">
+          ${MILESTONES.map(m=>{
+            const hit = communityTotal >= m.cr*cr;
+            return `<div style="text-align:center;flex:1;">
+              <div style="width:8px;height:8px;border-radius:50%;margin:0 auto 2px;background:${hit?m.color:'rgba(107,140,82,0.2)'};box-shadow:${hit?'0 0 6px '+m.color:'none'};"></div>
+              <div style="font-size:0.5rem;color:${hit?m.color:'rgba(196,212,175,0.25)'};font-family:'Lato';">${m.cr}Cr</div>
+            </div>`;
+          }).join('')}
+        </div>
+      </div>`;
+  }
+
+  if(!ranked.length||ranked.every(r=>r.score===0)){
+    el.innerHTML=milestoneBanner+'<div class="lb-empty">No entries yet. Start your practice!</div>';return;
+  }
+
+  // Filter out hidden users (unless in admin mode)
+  const hiddenUsers = d.lbHidden || [];
+  const visibleRanked = lbAdminMode
+    ? ranked
+    : ranked.filter(r => !hiddenUsers.includes(r.name) && !r.hiddenFromLb);
+
+  el.innerHTML = milestoneBanner + visibleRanked.map((r,i)=>{
+    const isMe=r.name===me;
+    const isHidden = hiddenUsers.includes(r.name);
+    const cls='lb-card'+(isMe?' me':i===0&&!lbAdminMode?' top1':'')+(isHidden?' lb-hidden':'');
+    const badge=i<3&&!lbAdminMode?`<span style="font-size:1.1rem">${medals[i]}</span>`:`<span class="lb-rnum">${i+1}</span>`;
+    const badgeCls='lb-rank-badge'+(i===0&&!lbAdminMode?' r1':i===1&&!lbAdminMode?' r2':i===2&&!lbAdminMode?' r3':'');
+    const ms = lbFilter==='alltime' ? getMilestone(r.total) : null;
+    const msBadge = ms ? `<span style="font-size:0.62rem;font-weight:700;letter-spacing:1px;color:${ms.color};margin-left:6px;vertical-align:middle;" title="${ms.label} milestone">✦${ms.cr}Cr</span>` : '';
+    const removeBtn = lbAdminMode && r.name !== me
+      ? `<button class="lb-remove-btn" onclick="toggleLbHide('${r.name.replace(/'/g,"\'")}')">
+          ${isHidden ? '↩ Restore' : '🗑 Remove'}
+         </button>`
+      : '';
+    const hiddenLabel = isHidden ? `<span style="font-size:0.6rem;color:rgba(196,100,100,0.6);letter-spacing:1px;text-transform:uppercase;margin-left:6px;">hidden</span>` : '';
+    return `<div class="${cls}">
+      <div class="${badgeCls}">${badge}</div>
+      <div class="lb-info">
+        <div class="lb-uname">${r.displayName}${isMe?'<span class="you-chip">you</span>':''}${msBadge}${hiddenLabel}</div>
+        <div class="lb-meta">🔥 ${r.streak} day streak${lbFilter==='alltime'?' · '+fmtCrore(r.total)+' total':''}</div>
+      </div>
+      <div class="lb-score-col" style="display:flex;align-items:center;gap:10px;">
+        <div>
+          <div class="lb-score-val">${fmtCrore(r.score)}</div>
+          <div class="lb-score-unit">repetitions</div>
+        </div>
+        ${removeBtn}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+let lbAdminMode = false;
+
+function toggleLbAdmin(){
+  if(!adminUnlocked){
+    // Prompt for admin password via existing modal flow
+    _lbAdminPending = true;
+    document.getElementById('admin-pw-input').value='';
+    document.getElementById('admin-err').classList.remove('show');
+    document.getElementById('admin-modal').classList.add('open');
+    return;
+  }
+  lbAdminMode = !lbAdminMode;
+  document.getElementById('lb-admin-bar').style.display = lbAdminMode ? 'block' : 'none';
+  document.getElementById('lb-admin-btn').style.color = lbAdminMode ? 'rgba(220,140,140,0.8)' : 'rgba(212,169,106,0.5)';
+  renderLb();
+}
+
+let _lbAdminPending = false;
+
+function toggleLbHide(name){
+  const d = load();
+  if(!d.lbHidden) d.lbHidden = [];
+  const idx = d.lbHidden.indexOf(name);
+  if(idx === -1){
+    d.lbHidden.push(name);
+    toast('🗑 ' + name + ' removed from leaderboard');
+  } else {
+    d.lbHidden.splice(idx, 1);
+    toast('↩ ' + name + ' restored to leaderboard');
+  }
+  save(d);
+  renderLb();
+}
+
+// ══════════════════════════════════════
+// SANGAT
+// ══════════════════════════════════════
+function renderSangat(){
+  const d=load();const users=Object.entries(d.users);
+  const visibleUsers = users.filter(([name,u])=> name===me || !u.hiddenFromSangat);
+  document.getElementById('sangat-count').textContent=visibleUsers.length+' sadhak'+(visibleUsers.length!==1?'s':'')+' in the sangat';
+  document.getElementById('sangat-grid').innerHTML=visibleUsers.map(([name,u])=>{
+    const total=allTime(u.jap||{});const streak=getStreak(name);
+    const since=new Date(u.joinedAt).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'});
+    const dname=u.displayName||name;
+    const isMe = name===me;
+    const editBtn = isMe
+      ? `<button onclick="openSangatEdit()" style="margin-top:8px;width:100%;padding:6px;background:rgba(107,140,82,0.1);border:1px solid rgba(107,140,82,0.22);border-radius:4px;color:rgba(150,176,125,0.65);font-family:'Lato';font-size:0.65rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all 0.18s;" onmouseover="this.style.background='rgba(107,140,82,0.22)'" onmouseout="this.style.background='rgba(107,140,82,0.1)'">✏️ Edit My Card</button>`
+      : '';
+    return `<div class="sg-card${isMe?' me-c':''}"><div class="sg-av">${dname.charAt(0).toUpperCase()}</div><div class="sg-name">${dname}</div><div class="sg-since">since ${since}</div><div class="sg-total">📿 ${total.toLocaleString()}</div><div class="sg-streak">🔥 ${streak} day streak</div>${editBtn}</div>`;
+  }).join('');
+}
+
+function openSangatEdit(){
+  const d=load(); const u=d.users[me];
+  document.getElementById('sangat-edit-name').value = u.displayName || me;
+  document.getElementById('sangat-edit-hide').checked = !!u.hiddenFromSangat;
+  document.getElementById('sangat-edit-panel').style.display='block';
+  document.getElementById('sangat-edit-panel').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function closeSangatEdit(){
+  document.getElementById('sangat-edit-panel').style.display='none';
+}
+
+function saveSangatEdit(){
+  const dn = document.getElementById('sangat-edit-name').value.trim();
+  const hide = document.getElementById('sangat-edit-hide').checked;
+  if(!dn){ toast('Display name cannot be empty.'); return; }
+  const d=load();
+  d.users[me].displayName = dn===me ? null : dn;
+  d.users[me].hiddenFromSangat = hide;
+  save(d);
+  closeSangatEdit();
+  renderSangat(); renderLb();
+  toast('✅ Your Sangat card updated!');
+}
+
+// ══════════════════════════════════════
+// BLOG
+// ══════════════════════════════════════
+function initBlogPosts(){
+  const d=load();
+  if(!d.posts){ d.posts=[]; save(d); }
+}
+
+function renderBlog(){
+  const d=load();const posts=[...d.posts].sort((a,b)=>b.id-a.id);
+  const el=document.getElementById('blog-grid');
+  if(!posts.length){
+    el.innerHTML='<div style="text-align:center;padding:36px;font-style:italic;color:rgba(196,212,175,0.28);font-family:\'Playfair Display\',serif;">No articles yet. Use Admin to publish your first article.</div>';
+    return;
+  }
+  el.innerHTML=posts.map(p=>`
+    <div class="blog-card">
+      <div class="blog-card-inner">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:4px;">
+          <span class="blog-tag">${p.tag}</span>
+          ${adminUnlocked ? `<button class="blog-delete-btn" onclick="deleteBlogPost(${p.id})" title="Delete article">🗑 Delete</button>` : ''}
+        </div>
+        <div class="blog-title" onclick="openBlogArticle(${p.id})">${p.title}</div>
+        <div class="blog-meta">By ${p.author||'sitaram.life'} &nbsp;·&nbsp; ${fmtLongDate(p.date)}</div>
+        <div class="blog-excerpt">${p.excerpt}</div>
+        <button class="blog-read-more" onclick="openBlogArticle(${p.id})">Read Full Article →</button>
+      </div>
+    </div>`).join('');
+}
+
+function deleteBlogPost(id){
+  if(!adminUnlocked){toast('Admin access required.');return;}
+  if(!confirm('Delete this article? This cannot be undone.'))return;
+  const d=load();
+  d.posts=d.posts.filter(p=>p.id!==id);
+  save(d);renderBlog();
+  toast('🗑 Article deleted');
+}
+
+function openBlogArticle(id){
+  const d=load();const post=d.posts.find(p=>p.id===id);if(!post)return;
+  document.getElementById('blog-list-view').style.display='none';
+  document.getElementById('blog-article').style.display='block';
+  document.getElementById('article-content').innerHTML=`
+    <span class="article-tag">${post.tag}</span>
+    <div class="article-title">${post.title}</div>
+    <div class="article-meta">By ${post.author||'sitaram.life'} &nbsp;·&nbsp; ${fmtLongDate(post.date)}</div>
+    <div class="article-body">${renderArticleBody(post.body)}</div>`;
+  window.scrollTo(0,0);
+}
+function closeBlogArticle(){
+  document.getElementById('blog-article').style.display='none';
+  document.getElementById('blog-list-view').style.display='block';
+}
+function renderArticleBody(raw){
+  return raw.split('\n\n').map(para=>{
+    para=para.trim();if(!para)return'';
+    if(para.startsWith('###'))return`<h3>${para.substring(3).trim()}</h3>`;
+    if(para.startsWith('>'))return`<blockquote>${para.substring(1).trim()}</blockquote>`;
+    return`<p>${para.replace(/\*(.*?)\*/g,'<em>$1</em>')}</p>`;
+  }).join('');
+}
+
+// Admin blog
+let adminPanelVisible=false;
+function toggleAdminPanel(){
+  if(!adminUnlocked){ document.getElementById('admin-pw-input').value=''; document.getElementById('admin-err').classList.remove('show'); document.getElementById('admin-modal').classList.add('open'); }
+  else{ adminPanelVisible=!adminPanelVisible; document.getElementById('admin-panel').style.display=adminPanelVisible?'block':'none'; }
+}
+function closeAdminModal(){ document.getElementById('admin-modal').classList.remove('open'); }
+function checkAdminPw(){
+  const pw=document.getElementById('admin-pw-input').value;
+  if(pw===ADMIN_PASSWORD){
+    adminUnlocked=true; closeAdminModal();
+    if(_lbAdminPending){
+      _lbAdminPending=false;
+      lbAdminMode=true;
+      document.getElementById('lb-admin-bar').style.display='block';
+      document.getElementById('lb-admin-btn').style.color='rgba(220,140,140,0.8)';
+      renderLb();
+      toast('🌿 Admin mode — you can now remove members');
+    } else {
+      adminPanelVisible=true;
+      document.getElementById('admin-panel').style.display='block';
+      renderBlog();
+      toast('🌿 Admin access granted — delete buttons now visible');
+    }
+  }
+  else{ document.getElementById('admin-err').classList.add('show'); }
+}
+function clearBlogForm(){
+  ['blog-title-input','blog-excerpt-input','blog-body-input'].forEach(id=>document.getElementById(id).value='');
+}
+function publishBlogPost(){
+  const title=document.getElementById('blog-title-input').value.trim();
+  const excerpt=document.getElementById('blog-excerpt-input').value.trim();
+  const body=document.getElementById('blog-body-input').value.trim();
+  const tag=document.getElementById('blog-tag-input').value;
+  if(!title||!body){toast('Please fill in at least a title and article body.');return;}
+  const d=load();
+  const newPost={id:Date.now(),tag,title,excerpt:excerpt||body.substring(0,160)+'…',date:today(),author:'sitaram.life',body};
+  d.posts.unshift(newPost);save(d);
+  clearBlogForm();renderBlog();
+  toast('📖 Article published!');
+}
+
+// ══════════════════════════════════════
+// REFERRAL
+// ══════════════════════════════════════
+function renderReferral(){
+  const d=load();const u=d.users[me];
+  const myCode=u.refCode||'—';
+  document.getElementById('my-ref-code').textContent=myCode;
+
+  // Find all users who used my code to join
+  const referred=Object.entries(d.users).filter(([name,u2])=>u2.referredBy===myCode && name!==me);
+
+  const totalJap=referred.reduce((sum,[,u2])=>sum+allTime(u2.jap||{}),0);
+  const activeToday=referred.filter(([,u2])=>(u2.jap||{})[today()]>0).length;
+
+  document.getElementById('ref-count-total').textContent=referred.length;
+  document.getElementById('ref-jap-total').textContent=fmt(totalJap);
+  document.getElementById('ref-active-today').textContent=activeToday;
+
+  const el=document.getElementById('ref-members-list');
+  if(!referred.length){
+    el.innerHTML='<div class="ref-empty">No one has joined with your code yet.<br>Share <strong>'+myCode+'</strong> with your sangat! 🙏</div>';
+    return;
+  }
+  el.innerHTML='<div class="ref-members">'+referred.map(([name,u2])=>{
+    const jTotal=allTime(u2.jap||{});const streak=getStreak(name);
+    const todayJap=(u2.jap||{})[today()]||0;
+    const since=new Date(u2.joinedAt).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'});
+    return `<div class="ref-member-card">
+      <div class="ref-av">${name.charAt(0).toUpperCase()}</div>
+      <div class="ref-info">
+        <div class="ref-mname">${name}</div>
+        <div class="ref-msub">Joined ${since}${todayJap>0?' · 🟢 Active today':''}</div>
+      </div>
+      <div class="ref-mscore-col">
+        <div class="ref-mjap">📿 ${jTotal.toLocaleString()}</div>
+        <div class="ref-mstreak">🔥 ${streak} day streak</div>
+      </div>
+    </div>`;
+  }).join('')+'</div>';
+}
+
+function copyRefCode(){
+  const d=load();const code=d.users[me]?.refCode||'';
+  navigator.clipboard.writeText(code).then(()=>toast('📋 Code '+code+' copied!')).catch(()=>{const t=document.getElementById('my-ref-code');const r=document.createRange();r.selectNode(t);window.getSelection().removeAllRanges();window.getSelection().addRange(r);toast('Code selected — press Ctrl+C to copy');});
+}
+function copyRefLink(){
+  const d=load();const code=d.users[me]?.refCode||'';
+  const link=window.location.href.split('?')[0]+'?ref='+encodeURIComponent(code);
+  navigator.clipboard.writeText(link).then(()=>toast('🔗 Link copied!')).catch(()=>toast('Could not copy automatically'));
+}
+function shareRef(){
+  const d=load();const code=d.users[me]?.refCode||'';
+  const text='Join me on sitaram.life for naam jap sadhana! Use my code '+code+' when you join and we can track our practice together. 🙏';
+  if(navigator.share){navigator.share({title:'sitaram.life',text,url:window.location.href}).catch(()=>{});}
+  else{navigator.clipboard.writeText(text).then(()=>toast('Share text copied!')).catch(()=>{});}
+}
+
+// Auto-fill ref code from URL param
+function checkURLRef(){
+  const params=new URLSearchParams(window.location.search);
+  const ref=params.get('ref');
+  if(ref) document.getElementById('join-ref').value=decodeURIComponent(ref).toUpperCase();
+}
+
+// ══════════════════════════════════════
+// TABS
+// ══════════════════════════════════════
+function goTab(id,btn){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+  if(id==='leaderboard')renderLb();
+  if(id==='sangat')renderSangat();
+  if(id==='blog')renderBlog();
+  if(id==='referral')renderReferral();
+}
+
+// ══════════════════════════════════════
+// TOAST
+// ══════════════════════════════════════
+function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2800);}
+
+// ══════════════════════════════════════
+// USER SETTINGS & AUTH
+// ══════════════════════════════════════
+let _userAuthCallback = null;
+
+function requireUserAuth(callback){
+  const d=load(); const u=d.users[me];
+  if(!u.password){ callback(); return; } // no password set, allow directly
+  _userAuthCallback = callback;
+  document.getElementById('user-auth-pw').value='';
+  document.getElementById('user-auth-err').classList.remove('show');
+  document.getElementById('user-auth-modal').classList.add('open');
+}
+function closeUserAuthModal(){ document.getElementById('user-auth-modal').classList.remove('open'); }
+function checkUserAuth(){
+  const d=load(); const u=d.users[me];
+  const pw = document.getElementById('user-auth-pw').value;
+  if(u.password && pw !== u.password){
+    document.getElementById('user-auth-err').classList.add('show'); return;
+  }
+  closeUserAuthModal();
+  if(_userAuthCallback){ _userAuthCallback(); _userAuthCallback=null; }
+}
+
+function openUserSettings(){
+  requireUserAuth(()=>{
+    const d=load(); const u=d.users[me];
+    document.getElementById('settings-username-label').textContent = 'Managing: '+me;
+    document.getElementById('settings-new-pw').value='';
+    document.getElementById('settings-confirm-pw').value='';
+    document.getElementById('settings-display-name').value = u.displayName||me;
+    document.getElementById('settings-hide-lb').checked = !!u.hiddenFromLb;
+    document.getElementById('settings-hide-sangat').checked = !!u.hiddenFromSangat;
+    document.getElementById('settings-err').textContent='';
+    document.getElementById('settings-err').classList.remove('show');
+    // Security question
+    if(document.getElementById('settings-sq')){
+      document.getElementById('settings-sq').value = u.securityQuestion||'';
+      document.getElementById('settings-sa').value = '';
+    }
+    document.getElementById('user-settings-modal').classList.add('open');
+  });
+}
+function closeUserSettings(){ document.getElementById('user-settings-modal').classList.remove('open'); }
+
+function saveNewPassword(){
+  const np = document.getElementById('settings-new-pw').value.trim();
+  const cp = document.getElementById('settings-confirm-pw').value.trim();
+  const errEl = document.getElementById('settings-err');
+  if(!np){ errEl.textContent='Please enter a new password.'; errEl.classList.add('show'); return; }
+  if(np !== cp){ errEl.textContent='Passwords do not match.'; errEl.classList.add('show'); return; }
+  const d=load(); d.users[me].password=np; save(d);
+  errEl.classList.remove('show');
+  document.getElementById('settings-new-pw').value='';
+  document.getElementById('settings-confirm-pw').value='';
+  toast('🔐 Password updated successfully');
+}
+
+function saveDisplayName(){
+  const dn = document.getElementById('settings-display-name').value.trim();
+  if(!dn){ toast('Display name cannot be empty.'); return; }
+  const d=load(); d.users[me].displayName = dn === me ? null : dn; save(d);
+  refreshSadhana(); renderLb(); renderSangat();
+  toast('✅ Display name updated to "'+dn+'"');
+}
+
+function saveVisibility(){
+  const hideLb = document.getElementById('settings-hide-lb').checked;
+  const hideSangat = document.getElementById('settings-hide-sangat').checked;
+  const d=load();
+  d.users[me].hiddenFromLb = hideLb;
+  d.users[me].hiddenFromSangat = hideSangat;
+  save(d);
+  renderLb(); renderSangat();
+  closeUserSettings();
+  toast('✅ Visibility settings saved');
+}
+
+function saveSecurityQuestion(){
+  const sq = document.getElementById('settings-sq').value;
+  const sa = document.getElementById('settings-sa').value.trim().toLowerCase();
+  if(!sq){ toast('Please select a security question.'); return; }
+  if(!sa){ toast('Please enter an answer.'); return; }
+  const d=load();
+  d.users[me].securityQuestion = sq;
+  d.users[me].securityAnswer   = sa;
+  save(d);
+  document.getElementById('settings-sa').value='';
+  toast('🔑 Security question saved — password recovery enabled');
+}
+
+// ── FORGOT PASSWORD ──
+let _forgotName = null;
+function openForgotPassword(){
+  const name = document.getElementById('join-name').value.trim();
+  if(!name){ toast('Enter your name first.'); return; }
+  const d = load(); const u = d.users[name];
+  if(!u || !u.securityQuestion){
+    toast('No security question set for this account.');
+    return;
+  }
+  _forgotName = name;
+  document.getElementById('forgot-question-text').textContent = u.securityQuestion;
+  document.getElementById('forgot-answer').value='';
+  document.getElementById('forgot-err').classList.remove('show');
+  document.getElementById('forgot-new-pw').value='';
+  document.getElementById('forgot-confirm-pw').value='';
+  document.getElementById('forgot-reset-err').classList.remove('show');
+  document.getElementById('forgot-step-1').style.display='block';
+  document.getElementById('forgot-step-2').style.display='none';
+  document.getElementById('forgot-modal').classList.add('open');
+}
+function closeForgotModal(){ document.getElementById('forgot-modal').classList.remove('open'); _forgotName=null; }
+
+function checkSecurityAnswer(){
+  if(!_forgotName) return;
+  const d = load(); const u = d.users[_forgotName];
+  const ans = document.getElementById('forgot-answer').value.trim().toLowerCase();
+  if(ans !== u.securityAnswer){
+    document.getElementById('forgot-err').classList.add('show'); return;
+  }
+  document.getElementById('forgot-err').classList.remove('show');
+  document.getElementById('forgot-step-1').style.display='none';
+  document.getElementById('forgot-step-2').style.display='block';
+}
+
+function resetPasswordFromForgot(){
+  const np = document.getElementById('forgot-new-pw').value.trim();
+  const cp = document.getElementById('forgot-confirm-pw').value.trim();
+  if(!np || np !== cp){
+    document.getElementById('forgot-reset-err').classList.add('show'); return;
+  }
+  const d=load();
+  d.users[_forgotName].password = np;
+  save(d);
+  closeForgotModal();
+  toast('✅ Password reset! You can now log in with your new password.');
+}
+
+// ══════════════════════════════════════
+// KEYBOARD
+// ══════════════════════════════════════
+document.getElementById('join-name').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('join-pw').focus();});
+document.getElementById('join-name').addEventListener('blur',updateJoinUI);
+document.getElementById('join-pw').addEventListener('keydown',e=>{if(e.key==='Enter')doJoin();});
+document.getElementById('join-ref').addEventListener('keydown',e=>{if(e.key==='Enter')doJoin();});
+document.getElementById('user-auth-pw').addEventListener('keydown',e=>{if(e.key==='Enter')checkUserAuth();});
+document.getElementById('forgot-answer').addEventListener('keydown',e=>{if(e.key==='Enter')checkSecurityAnswer();});
+document.getElementById('forgot-new-pw').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('forgot-confirm-pw').focus();});
+document.getElementById('forgot-confirm-pw').addEventListener('keydown',e=>{if(e.key==='Enter')resetPasswordFromForgot();});
+window.addEventListener('keydown',e=>{
+  if(!me||document.getElementById('app-screen').style.display==='none')return;
+  if(document.querySelector('.tab.active')?.id!=='tab-sadhana')return;
+  if(document.activeElement.tagName==='INPUT'||document.activeElement.tagName==='TEXTAREA')return;
+  if(e.key===' '||e.key==='Enter'){e.preventDefault();addJap(1);}
+});
+
+// ══════════════════════════════════════
+// INIT
+// ══════════════════════════════════════
+checkURLRef();
+const _me=localStorage.getItem('sitaram4_me');
+if(_me&&load().users[_me]){me=_me;document.getElementById('join-screen').style.display='none';launchApp();}
+</script>
+</body>
+</html>
