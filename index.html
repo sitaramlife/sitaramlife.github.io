@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>sitaram.life — Naam Jap Sadhana</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&family=Noto+Sans+Devanagari:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- PWA Meta Tags -->
+<meta name="theme-color" content="#1A1408">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Sitaram">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Sitaram">
+<meta name="description" content="Naam Jap Sadhana — Daily practice tracker for your spiritual journey">
+<link rel="manifest" id="pwa-manifest">
+<!-- Apple touch icons (inline SVG-based) -->
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='80' fill='%231A1408'/%3E%3Ccircle cx='256' cy='256' r='200' fill='none' stroke='%2396B07D' stroke-width='6' stroke-dasharray='12 8' opacity='.4'/%3E%3Ccircle cx='256' cy='256' r='160' fill='%233B4A2F' opacity='.5'/%3E%3Ctext x='256' y='200' font-family='serif' font-size='80' fill='%23F5EDD8' text-anchor='middle' dominant-baseline='middle' opacity='.9'%3E%F0%9F%99%8F%3C/text%3E%3Ctext x='256' y='300' font-family='serif' font-size='52' font-weight='bold' fill='%23D4A96A' text-anchor='middle' letter-spacing='4'%3ESITARAM%3C/text%3E%3Ctext x='256' y='360' font-family='serif' font-size='24' fill='%2396B07D' text-anchor='middle' opacity='.7'%3E.life%3C/text%3E%3C/svg%3E">
 <style>
 :root {
   --moss:#3B4A2F; --fern:#516640; --leaf:#6B8C52; --sage:#96B07D; --mist:#C4D4AF;
@@ -57,6 +69,15 @@ header{text-align:center;padding:48px 20px 24px;}
   border-top:1px solid rgba(160,106,58,0.15);
   padding-top:10px;
 }
+
+/* AUTH TABS */
+.auth-tabs{display:flex;gap:0;margin-bottom:24px;border-bottom:1px solid rgba(107,140,82,0.2);}
+.auth-tab{flex:1;padding:10px;background:transparent;border:none;border-bottom:2px solid transparent;color:rgba(196,212,175,0.35);font-family:'Lato';font-weight:700;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all 0.2s;margin-bottom:-1px;}
+.auth-tab.active{color:var(--sage);border-bottom-color:var(--leaf);}
+.auth-tab:not(.active):hover{color:rgba(196,212,175,0.6);}
+.field-hint{font-size:0.72rem;font-style:italic;margin-top:4px;min-height:16px;}
+.field-hint.ok{color:rgba(150,176,125,0.7);}
+.field-hint.err-hint{color:rgba(196,100,100,0.7);}
 
 /* JOIN */
 #join-screen{display:flex;flex-direction:column;align-items:center;padding:4px 0 40px;}
@@ -375,6 +396,9 @@ header{text-align:center;padding:48px 20px 24px;}
 <header>
   <div class="site-domain">sitaram . life</div>
   <div class="tagline">naam jap · daily sadhana · community</div>
+  <div style="margin-top:14px;">
+    <button id="pwa-header-btn" onclick="showPWABanner()" style="background:rgba(59,74,47,0.2);border:1px solid rgba(107,140,82,0.2);color:rgba(150,176,125,0.5);font-family:'Lato';font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:7px 16px;border-radius:20px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.color='rgba(150,176,125,0.85)'" onmouseout="this.style.color='rgba(150,176,125,0.5)'">📱 Add to Home Screen</button>
+  </div>
 </header>
 
 <div class="orn"><div class="orn-inner">✦ &nbsp; नाम जप &nbsp; ✦</div></div>
@@ -391,39 +415,53 @@ header{text-align:center;padding:48px 20px 24px;}
 <!-- JOIN -->
 <div id="join-screen">
   <div class="join-card">
-    <h2 id="join-title">Join the Sangat</h2>
-    <p id="join-subtitle">Create your account to begin sadhana</p>
-    <div class="field">
-      <label>Your Name</label>
-      <input type="text" id="join-name" placeholder="e.g. Sita Devi" maxlength="30" autocomplete="off">
+    <!-- Tab switcher -->
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="tab-signup-btn" onclick="switchAuthTab('signup')">Create Account</button>
+      <button class="auth-tab" id="tab-signin-btn" onclick="switchAuthTab('signin')">Sign In</button>
     </div>
-    <div class="field" id="join-pw-field">
-      <label id="join-pw-label">Set Your Password <span style="font-weight:300;letter-spacing:0;text-transform:none;font-style:italic;font-size:0.75rem;color:rgba(196,212,175,0.3)">(protects your account)</span></label>
-      <input type="password" id="join-pw" placeholder="Choose a password" maxlength="50" autocomplete="new-password">
+
+    <!-- SIGN UP FORM -->
+    <div id="signup-form">
+      <div class="field">
+        <label>Your Name / Username</label>
+        <input type="text" id="su-name" placeholder="e.g. Sita Devi" maxlength="30" autocomplete="off">
+        <div class="field-hint" id="su-name-hint"></div>
+      </div>
+      <div class="field">
+        <label>Email Address</label>
+        <input type="email" id="su-email" placeholder="your@email.com" maxlength="100" autocomplete="email">
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" id="su-pw" placeholder="Choose a strong password" maxlength="50" autocomplete="new-password">
+      </div>
+      <div class="field">
+        <label>Referral Code <span style="font-weight:300;letter-spacing:0;text-transform:none;font-style:italic;font-size:0.75rem;color:rgba(196,212,175,0.3)">(optional)</span></label>
+        <input type="text" id="su-ref" placeholder="e.g. RAM•108" maxlength="12" autocomplete="off" style="text-transform:uppercase;letter-spacing:3px;">
+      </div>
+      <button class="join-btn" onclick="doSignUp()">Create Account &nbsp;✦&nbsp; प्रारम्भ</button>
+      <p class="ref-hint">Already have an account? <button onclick="switchAuthTab('signin')" style="background:none;border:none;color:var(--sage);cursor:pointer;font-family:'Lato';font-size:inherit;text-decoration:underline;text-underline-offset:3px;">Sign in here</button></p>
+      <div class="err" id="su-err"></div>
     </div>
-    <div class="field" id="join-sq-wrap">
-      <label>Security Question <span style="font-weight:300;letter-spacing:0;text-transform:none;font-style:italic;font-size:0.75rem;color:rgba(196,212,175,0.3)">(for password recovery)</span></label>
-      <select id="join-sq" style="width:100%;padding:11px 14px;background:rgba(245,237,216,0.05);border:1px solid rgba(107,140,82,0.25);border-radius:4px;color:var(--cream);font-family:'Lato';font-size:0.9rem;outline:none;margin-bottom:8px;color-scheme:dark;">
-        <option value="">— Choose a question —</option>
-        <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
-        <option value="What was the name of your first pet?">What was the name of your first pet?</option>
-        <option value="What city were you born in?">What city were you born in?</option>
-        <option value="What is the name of your Guru?">What is the name of your Guru?</option>
-        <option value="What is your favourite naam?">What is your favourite naam?</option>
-        <option value="What was your childhood nickname?">What was your childhood nickname?</option>
-      </select>
-      <input type="text" id="join-sa" placeholder="Your answer (case-insensitive)" maxlength="80" autocomplete="off" style="width:100%;padding:13px 16px;background:rgba(245,237,216,0.05);border:1px solid rgba(107,140,82,0.25);border-radius:4px;color:var(--cream);font-family:'Lato';font-size:1rem;outline:none;">
+
+    <!-- SIGN IN FORM -->
+    <div id="signin-form" style="display:none;">
+      <div class="field">
+        <label>Username or Email</label>
+        <input type="text" id="si-identity" placeholder="Your username or email" maxlength="100" autocomplete="username">
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" id="si-pw" placeholder="Your password" maxlength="50" autocomplete="current-password">
+      </div>
+      <button class="join-btn" onclick="doSignIn()">Sign In &nbsp;🙏</button>
+      <div style="text-align:center;margin-top:12px;">
+        <button onclick="openForgotPassword()" style="background:transparent;border:none;color:rgba(212,169,106,0.5);font-family:'Lato';font-size:0.78rem;cursor:pointer;letter-spacing:1px;text-decoration:underline;text-underline-offset:3px;">Forgot password?</button>
+      </div>
+      <p class="ref-hint">New here? <button onclick="switchAuthTab('signup')" style="background:none;border:none;color:var(--sage);cursor:pointer;font-family:'Lato';font-size:inherit;text-decoration:underline;text-underline-offset:3px;">Create an account</button></p>
+      <div class="err" id="si-err"></div>
     </div>
-    <div class="field">
-      <label>Referral Code <span style="font-weight:300;letter-spacing:0;text-transform:none;font-style:italic;font-size:0.75rem;color:rgba(196,212,175,0.3)">(optional)</span></label>
-      <input type="text" id="join-ref" placeholder="e.g. RAM•108" maxlength="12" autocomplete="off" style="text-transform:uppercase;letter-spacing:3px;">
-    </div>
-    <button class="join-btn" onclick="doJoin()">Begin &nbsp;✦&nbsp; प्रारम्भ</button>
-    <div style="text-align:center;margin-top:10px;">
-      <button id="forgot-pw-btn" onclick="openForgotPassword()" style="display:none;background:transparent;border:none;color:rgba(212,169,106,0.5);font-family:'Lato';font-size:0.78rem;cursor:pointer;letter-spacing:1px;text-decoration:underline;text-underline-offset:3px;">Forgot password?</button>
-    </div>
-    <p class="ref-hint" id="join-ref-hint">Have a friend's referral code? Enter it above.</p>
-    <div class="err" id="join-err">Please enter your name and password.</div>
   </div>
 </div>
 
@@ -615,7 +653,36 @@ header{text-align:center;padding:48px 20px 24px;}
     <div id="ref-members-list"><div class="ref-empty">No one has joined with your code yet. Share it with your sangat! 🙏</div></div>
   </div>
 
-  <div class="foot"><button class="btn-signout" onclick="doSignout()">leave session</button></div>
+  <!-- PWA Install Banner -->
+  <div id="pwa-banner" style="display:none;margin-top:28px;background:linear-gradient(135deg,rgba(59,74,47,0.25),rgba(92,61,30,0.15));border:1px solid rgba(107,140,82,0.3);border-radius:8px;padding:18px 20px;text-align:center;">
+    <div style="font-size:1.4rem;margin-bottom:6px;">📱</div>
+    <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:1rem;color:var(--parch);margin-bottom:4px;">Add to Home Screen</div>
+    <div style="font-size:0.8rem;color:rgba(196,212,175,0.5);font-style:italic;margin-bottom:14px;">Use Sitaram like a native app — one tap from your home screen</div>
+    <div id="pwa-ios-instructions" style="display:none;background:rgba(59,74,47,0.15);border-radius:6px;padding:12px;margin-bottom:14px;text-align:left;">
+      <div style="font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--sage);margin-bottom:8px;">iPhone / iPad</div>
+      <div style="font-size:0.82rem;color:rgba(245,237,216,0.65);line-height:1.7;">
+        1. Tap the <strong style="color:var(--sand)">Share</strong> button (□↑) in Safari<br>
+        2. Scroll down and tap <strong style="color:var(--sand)">"Add to Home Screen"</strong><br>
+        3. Tap <strong style="color:var(--sand)">"Add"</strong> — done! 🙏
+      </div>
+    </div>
+    <div id="pwa-android-instructions" style="display:none;background:rgba(59,74,47,0.15);border-radius:6px;padding:12px;margin-bottom:14px;text-align:left;">
+      <div style="font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--sage);margin-bottom:8px;">Android</div>
+      <div style="font-size:0.82rem;color:rgba(245,237,216,0.65);line-height:1.7;">
+        1. Tap the <strong style="color:var(--sand)">⋮ Menu</strong> in Chrome<br>
+        2. Tap <strong style="color:var(--sand)">"Add to Home screen"</strong><br>
+        3. Tap <strong style="color:var(--sand)">"Add"</strong> — done! 🙏
+      </div>
+    </div>
+    <button id="pwa-install-btn" style="display:none;width:100%;padding:12px;background:linear-gradient(135deg,var(--moss),var(--fern));color:var(--cream);border:none;border-radius:4px;font-family:'Lato';font-weight:700;font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;margin-bottom:8px;" onclick="triggerPWAInstall()">Install App</button>
+    <button onclick="document.getElementById('pwa-banner').style.display='none'" style="background:transparent;border:none;color:rgba(196,212,175,0.3);font-family:'Lato';font-size:0.75rem;cursor:pointer;">Dismiss</button>
+  </div>
+
+  <div class="foot">
+    <button class="btn-signout" onclick="doSignout()">leave session</button>
+    &nbsp;·&nbsp;
+    <button class="btn-signout" onclick="showPWABanner()" style="color:rgba(150,176,125,0.3);">📱 Add to phone</button>
+  </div>
 </div>
 </div>
 
@@ -722,23 +789,37 @@ header{text-align:center;padding:48px 20px 24px;}
 
 <!-- FORGOT PASSWORD MODAL -->
 <div class="modal-overlay" id="forgot-modal">
-  <div class="modal-box" style="max-width:380px;">
+  <div class="modal-box" style="max-width:390px;">
     <button class="modal-close" onclick="closeForgotModal()">✕</button>
     <h3>🔑 Password Recovery</h3>
-    <p id="forgot-modal-desc">Answer your security question to reset your password</p>
+    <p>Enter your username or email to find your account</p>
 
-    <!-- Step 1: show question, ask answer -->
-    <div id="forgot-step-1">
-      <div style="background:rgba(59,74,47,0.12);border:1px solid rgba(107,140,82,0.2);border-radius:4px;padding:14px 16px;margin-bottom:16px;">
-        <div style="font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:rgba(150,176,125,0.5);margin-bottom:6px;font-family:'Lato';">Your Security Question</div>
-        <div id="forgot-question-text" style="font-family:'Playfair Display',serif;font-style:italic;color:rgba(245,237,216,0.75);font-size:0.95rem;line-height:1.5;"></div>
-      </div>
+    <!-- Step 0: identify account -->
+    <div id="forgot-step-0">
       <div class="field" style="margin-bottom:14px;">
-        <label>Your Answer</label>
-        <input type="text" id="forgot-answer" placeholder="Enter your answer" autocomplete="off">
+        <label>Username or Email</label>
+        <input type="text" id="forgot-identity" placeholder="Your username or email" autocomplete="off">
       </div>
-      <button class="join-btn" style="font-size:0.72rem;padding:11px;" onclick="checkSecurityAnswer()">Verify Answer</button>
-      <div class="err" id="forgot-err" style="margin-top:10px;">Incorrect answer. Try again.</div>
+      <button class="join-btn" style="font-size:0.72rem;padding:11px;" onclick="findForgotAccount()">Find My Account</button>
+      <div class="err" id="forgot-find-err" style="margin-top:10px;"></div>
+    </div>
+
+    <!-- Step 1: security question OR direct reset if no SQ -->
+    <div id="forgot-step-1" style="display:none;">
+      <div style="background:rgba(59,74,47,0.12);border:1px solid rgba(107,140,82,0.2);border-radius:4px;padding:12px 14px;margin-bottom:14px;">
+        <div style="font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:rgba(150,176,125,0.45);margin-bottom:4px;font-family:'Lato';">Account found</div>
+        <div id="forgot-account-label" style="font-weight:700;color:var(--parch);font-size:0.95rem;"></div>
+      </div>
+      <div id="forgot-sq-block">
+        <div style="font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:rgba(150,176,125,0.5);margin-bottom:6px;font-family:'Lato';">Security Question</div>
+        <div id="forgot-question-text" style="font-family:'Playfair Display',serif;font-style:italic;color:rgba(245,237,216,0.75);font-size:0.92rem;line-height:1.5;margin-bottom:12px;padding:10px 14px;background:rgba(59,74,47,0.1);border-radius:4px;"></div>
+        <div class="field" style="margin-bottom:14px;">
+          <label>Your Answer</label>
+          <input type="text" id="forgot-answer" placeholder="Enter your answer" autocomplete="off">
+        </div>
+        <button class="join-btn" style="font-size:0.72rem;padding:11px;" onclick="checkSecurityAnswer()">Verify Answer</button>
+        <div class="err" id="forgot-err" style="margin-top:10px;">Incorrect answer. Try again.</div>
+      </div>
     </div>
 
     <!-- Step 2: set new password -->
@@ -767,7 +848,7 @@ header{text-align:center;padding:48px 20px 24px;}
 // CONFIG — Change these!
 // ══════════════════════════════════════
 const ADMIN_PASSWORD = 'sitaram108'; // Change this!
-const SK = 'sitaram4_v1';
+const SK = 'sitaram6_v1';
 
 // ══════════════════════════════════════
 // DEFAULT BLOG POSTS
@@ -782,26 +863,39 @@ function save(d){localStorage.setItem(SK,JSON.stringify(d));}
 function today(){return new Date().toISOString().split('T')[0];}
 function monthKey(){const d=new Date();return d.getFullYear()+'-'+(d.getMonth()+1).toString().padStart(2,'0');}
 
-function ensureUser(name, refCode, password, secQ, secA){
+function createUser(name, email, password, refCode){
   const d=load();
-  if(!d.users[name]){
-    const prefix = name.replace(/[^a-zA-Z]/g,'').substring(0,3).toUpperCase() || 'SAR';
-    const suffix = Math.floor(100+Math.random()*900).toString();
-    const myCode = prefix + '•' + suffix;
-    d.users[name]={
-      joinedAt: new Date().toISOString(),
-      jap:{}, journal:[], goal:108, reminders:[],
-      refCode: myCode,
-      referredBy: refCode||null,
-      password: password||null,
-      displayName: null,
-      hiddenFromLb: false,
-      hiddenFromSangat: false,
-      securityQuestion: secQ||null,
-      securityAnswer: secA||null
-    };
-  }
+  const prefix = name.replace(/[^a-zA-Z]/g,'').substring(0,3).toUpperCase() || 'SAR';
+  const suffix = Math.floor(100+Math.random()*900).toString();
+  const myCode = prefix + '•' + suffix;
+  d.users[name]={
+    joinedAt: new Date().toISOString(),
+    jap:{}, journal:[], goal:108, reminders:[],
+    refCode: myCode,
+    referredBy: refCode||null,
+    password: password,
+    email: email.toLowerCase().trim(),
+    displayName: null,
+    hiddenFromLb: false,
+    hiddenFromSangat: false,
+    securityQuestion: null,
+    securityAnswer: null
+  };
   save(d); return d;
+}
+
+// lookup user by username or email
+function findUser(identity){
+  const d=load(); const id=identity.toLowerCase().trim();
+  // exact username match
+  if(d.users[id]) return [id, d.users[id]];
+  // case-insensitive username
+  const byName = Object.entries(d.users).find(([n])=>n.toLowerCase()===id);
+  if(byName) return byName;
+  // email match
+  const byEmail = Object.entries(d.users).find(([,u])=>u.email && u.email.toLowerCase()===id);
+  if(byEmail) return byEmail;
+  return null;
 }
 
 function sumDays(hist,n){const now=new Date();let t=0;for(let i=0;i<n;i++){const dd=new Date(now);dd.setDate(now.getDate()-i);t+=hist[dd.toISOString().split('T')[0]]||0;}return t;}
@@ -830,81 +924,90 @@ let me=null, lbFilter='today', adminUnlocked=false, pendingReminders=[];
 // ══════════════════════════════════════
 // AUTH
 // ══════════════════════════════════════
-function doJoin(){
-  const name = document.getElementById('join-name').value.trim();
-  const pw   = document.getElementById('join-pw').value.trim();
-  const ref  = document.getElementById('join-ref').value.trim().toUpperCase();
-  if(!name){ document.getElementById('join-err').classList.add('show'); return; }
+function switchAuthTab(tab){
+  const isSignup = tab==='signup';
+  document.getElementById('signup-form').style.display = isSignup?'block':'none';
+  document.getElementById('signin-form').style.display = isSignup?'none':'block';
+  document.getElementById('tab-signup-btn').classList.toggle('active', isSignup);
+  document.getElementById('tab-signin-btn').classList.toggle('active', !isSignup);
+  document.getElementById('su-err').classList.remove('show');
+  document.getElementById('si-err').classList.remove('show');
+}
+
+function doSignUp(){
+  const name  = document.getElementById('su-name').value.trim();
+  const email = document.getElementById('su-email').value.trim();
+  const pw    = document.getElementById('su-pw').value.trim();
+  const ref   = document.getElementById('su-ref').value.trim().toUpperCase();
+  const errEl = document.getElementById('su-err');
+  errEl.classList.remove('show');
+
+  if(!name){ errEl.textContent='Please enter your name.'; errEl.classList.add('show'); return; }
+  if(!email || !email.includes('@')){ errEl.textContent='Please enter a valid email address.'; errEl.classList.add('show'); return; }
+  if(!pw || pw.length < 4){ errEl.textContent='Password must be at least 4 characters.'; errEl.classList.add('show'); return; }
 
   const d = load();
-  const existing = d.users[name];
-
-  if(existing){
-    // Returning user — verify password
-    if(existing.password && pw !== existing.password){
-      document.getElementById('join-err').textContent = 'Incorrect password for "'+name+'". Try again.';
-      document.getElementById('join-err').classList.add('show');
-      return;
-    }
-  } else {
-    // New user — password required
-    if(!pw){
-      document.getElementById('join-err').textContent = 'Please choose a password to protect your account.';
-      document.getElementById('join-err').classList.add('show');
-      return;
-    }
+  // Check username not taken
+  if(d.users[name] || Object.keys(d.users).some(n=>n.toLowerCase()===name.toLowerCase())){
+    errEl.textContent='Username "'+name+'" is already taken. Choose a different name.'; errEl.classList.add('show'); return;
   }
-
-  document.getElementById('join-err').classList.remove('show');
+  // Check email not already registered
+  if(Object.values(d.users).some(u=>u.email && u.email.toLowerCase()===email.toLowerCase())){
+    errEl.textContent='An account with this email already exists. Please sign in.'; errEl.classList.add('show'); return;
+  }
   if(ref){
     const refOwner=Object.entries(d.users).find(([,u])=>u.refCode===ref);
     if(!refOwner) toast('⚠️ Referral code not found, joining without it');
   }
-  const sq = document.getElementById('join-sq') ? document.getElementById('join-sq').value : '';
-  const sa = document.getElementById('join-sa') ? document.getElementById('join-sa').value.trim().toLowerCase() : '';
-  ensureUser(name, ref||null, pw, sq, sa);
+  createUser(name, email, pw, ref||null);
   me = name;
-  localStorage.setItem('sitaram4_me', name);
+  localStorage.setItem('sitaram6_me', name);
   launchApp();
 }
 
-function updateJoinUI(){
-  const name = document.getElementById('join-name').value.trim();
-  if(!name){ resetJoinUI(); return; }
-  const d = load();
-  const existing = d.users[name];
-  if(existing){
-    document.getElementById('join-title').textContent = 'Welcome back, '+name+' 🙏';
-    document.getElementById('join-subtitle').textContent = 'Enter your password to continue';
-    document.getElementById('join-pw-label').textContent = 'Your Password';
-    document.getElementById('join-pw').placeholder = 'Enter your password';
-    document.getElementById('join-ref').parentElement.style.display = 'none';
-    document.getElementById('join-ref-hint').style.display = 'none';
-    document.getElementById('join-sq-wrap').style.display = 'none';
-    // Show forgot password link only if they have a security question set
-    const hasSQ = existing.securityQuestion && existing.securityAnswer;
-    document.getElementById('forgot-pw-btn').style.display = hasSQ ? 'inline-block' : 'none';
-  } else {
-    resetJoinUI();
+function doSignIn(){
+  const identity = document.getElementById('si-identity').value.trim();
+  const pw       = document.getElementById('si-pw').value.trim();
+  const errEl    = document.getElementById('si-err');
+  errEl.classList.remove('show');
+
+  if(!identity){ errEl.textContent='Please enter your username or email.'; errEl.classList.add('show'); return; }
+  if(!pw){ errEl.textContent='Please enter your password.'; errEl.classList.add('show'); return; }
+
+  const found = findUser(identity);
+  if(!found){ errEl.textContent='No account found with that username or email.'; errEl.classList.add('show'); return; }
+  const [name, user] = found;
+  if(user.password && pw !== user.password){
+    errEl.textContent='Incorrect password. Try again.'; errEl.classList.add('show'); return;
   }
+  me = name;
+  localStorage.setItem('sitaram6_me', name);
+  launchApp();
 }
-function resetJoinUI(){
-  document.getElementById('join-title').textContent = 'Join the Sangat';
-  document.getElementById('join-subtitle').textContent = 'Create your account to begin sadhana';
-  document.getElementById('join-pw-label').innerHTML = 'Set Your Password <span style="font-weight:300;letter-spacing:0;text-transform:none;font-style:italic;font-size:0.75rem;color:rgba(196,212,175,0.3)">(protects your account)</span>';
-  document.getElementById('join-pw').placeholder = 'Choose a password';
-  document.getElementById('join-ref').parentElement.style.display = '';
-  document.getElementById('join-ref-hint').style.display = '';
-  document.getElementById('join-sq-wrap').style.display = '';
-  document.getElementById('forgot-pw-btn').style.display = 'none';
+
+// check username availability live
+function checkUsernameAvail(){
+  const name = document.getElementById('su-name').value.trim();
+  const hint = document.getElementById('su-name-hint');
+  if(!name){ hint.textContent=''; hint.className='field-hint'; return; }
+  const d=load();
+  const taken = d.users[name] || Object.keys(d.users).some(n=>n.toLowerCase()===name.toLowerCase());
+  if(taken){ hint.textContent='✗ Username taken'; hint.className='field-hint err-hint'; }
+  else { hint.textContent='✓ Username available'; hint.className='field-hint ok'; }
 }
 
 function doSignout(){
-  localStorage.removeItem('sitaram4_me');me=null;
+  localStorage.removeItem('sitaram6_me');me=null;
   document.getElementById('join-screen').style.display='flex';
   document.getElementById('app-screen').style.display='none';
-  document.getElementById('join-name').value='';
-  document.getElementById('join-ref').value='';
+  document.getElementById('si-identity').value='';
+  document.getElementById('si-pw').value='';
+  document.getElementById('su-name').value='';
+  document.getElementById('su-email').value='';
+  document.getElementById('su-pw').value='';
+  document.getElementById('su-ref').value='';
+  document.getElementById('su-name-hint').textContent='';
+  switchAuthTab('signin');
 }
 
 // ══════════════════════════════════════
@@ -1434,7 +1537,7 @@ function shareRef(){
 function checkURLRef(){
   const params=new URLSearchParams(window.location.search);
   const ref=params.get('ref');
-  if(ref) document.getElementById('join-ref').value=decodeURIComponent(ref).toUpperCase();
+  if(ref){ document.getElementById('su-ref').value=decodeURIComponent(ref).toUpperCase(); switchAuthTab('signup'); }
 }
 
 // ══════════════════════════════════════
@@ -1550,25 +1653,43 @@ function saveSecurityQuestion(){
 // ── FORGOT PASSWORD ──
 let _forgotName = null;
 function openForgotPassword(){
-  const name = document.getElementById('join-name').value.trim();
-  if(!name){ toast('Enter your name first.'); return; }
-  const d = load(); const u = d.users[name];
-  if(!u || !u.securityQuestion){
-    toast('No security question set for this account.');
-    return;
-  }
-  _forgotName = name;
-  document.getElementById('forgot-question-text').textContent = u.securityQuestion;
-  document.getElementById('forgot-answer').value='';
-  document.getElementById('forgot-err').classList.remove('show');
+  _forgotName = null;
+  document.getElementById('forgot-identity').value='';
+  document.getElementById('forgot-find-err').classList.remove('show');
+  document.getElementById('forgot-answer') && (document.getElementById('forgot-answer').value='');
+  document.getElementById('forgot-err') && document.getElementById('forgot-err').classList.remove('show');
   document.getElementById('forgot-new-pw').value='';
   document.getElementById('forgot-confirm-pw').value='';
   document.getElementById('forgot-reset-err').classList.remove('show');
-  document.getElementById('forgot-step-1').style.display='block';
+  document.getElementById('forgot-step-0').style.display='block';
+  document.getElementById('forgot-step-1').style.display='none';
   document.getElementById('forgot-step-2').style.display='none';
   document.getElementById('forgot-modal').classList.add('open');
 }
 function closeForgotModal(){ document.getElementById('forgot-modal').classList.remove('open'); _forgotName=null; }
+
+function findForgotAccount(){
+  const identity = document.getElementById('forgot-identity').value.trim();
+  const errEl = document.getElementById('forgot-find-err');
+  errEl.classList.remove('show');
+  if(!identity){ errEl.textContent='Please enter your username or email.'; errEl.classList.add('show'); return; }
+  const found = findUser(identity);
+  if(!found){ errEl.textContent='No account found with that username or email.'; errEl.classList.add('show'); return; }
+  const [name, user] = found;
+  _forgotName = name;
+  document.getElementById('forgot-account-label').textContent = name + (user.email ? ' ('+user.email+')' : '');
+  document.getElementById('forgot-step-0').style.display='none';
+  document.getElementById('forgot-step-1').style.display='block';
+  if(user.securityQuestion){
+    document.getElementById('forgot-sq-block').style.display='block';
+    document.getElementById('forgot-question-text').textContent = user.securityQuestion;
+  } else {
+    // no security question — allow direct reset (browser-local, no server)
+    document.getElementById('forgot-sq-block').style.display='none';
+    document.getElementById('forgot-step-1').style.display='none';
+    document.getElementById('forgot-step-2').style.display='block';
+  }
+}
 
 function checkSecurityAnswer(){
   if(!_forgotName) return;
@@ -1585,27 +1706,33 @@ function checkSecurityAnswer(){
 function resetPasswordFromForgot(){
   const np = document.getElementById('forgot-new-pw').value.trim();
   const cp = document.getElementById('forgot-confirm-pw').value.trim();
-  if(!np || np !== cp){
-    document.getElementById('forgot-reset-err').classList.add('show'); return;
-  }
+  if(!np || np.length < 4){ document.getElementById('forgot-reset-err').textContent='Password must be at least 4 characters.'; document.getElementById('forgot-reset-err').classList.add('show'); return; }
+  if(np !== cp){ document.getElementById('forgot-reset-err').textContent='Passwords do not match.'; document.getElementById('forgot-reset-err').classList.add('show'); return; }
   const d=load();
   d.users[_forgotName].password = np;
   save(d);
   closeForgotModal();
-  toast('✅ Password reset! You can now log in with your new password.');
+  switchAuthTab('signin');
+  toast('✅ Password reset! Sign in with your new password.');
 }
 
 // ══════════════════════════════════════
 // KEYBOARD
 // ══════════════════════════════════════
-document.getElementById('join-name').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('join-pw').focus();});
-document.getElementById('join-name').addEventListener('blur',updateJoinUI);
-document.getElementById('join-pw').addEventListener('keydown',e=>{if(e.key==='Enter')doJoin();});
-document.getElementById('join-ref').addEventListener('keydown',e=>{if(e.key==='Enter')doJoin();});
-document.getElementById('user-auth-pw').addEventListener('keydown',e=>{if(e.key==='Enter')checkUserAuth();});
+// Sign up
+document.getElementById('su-name').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('su-email').focus();});
+document.getElementById('su-name').addEventListener('input', checkUsernameAvail);
+document.getElementById('su-email').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('su-pw').focus();});
+document.getElementById('su-pw').addEventListener('keydown',e=>{if(e.key==='Enter')doSignUp();});
+// Sign in
+document.getElementById('si-identity').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('si-pw').focus();});
+document.getElementById('si-pw').addEventListener('keydown',e=>{if(e.key==='Enter')doSignIn();});
+// Forgot
+document.getElementById('forgot-identity').addEventListener('keydown',e=>{if(e.key==='Enter')findForgotAccount();});
 document.getElementById('forgot-answer').addEventListener('keydown',e=>{if(e.key==='Enter')checkSecurityAnswer();});
 document.getElementById('forgot-new-pw').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('forgot-confirm-pw').focus();});
 document.getElementById('forgot-confirm-pw').addEventListener('keydown',e=>{if(e.key==='Enter')resetPasswordFromForgot();});
+document.getElementById('user-auth-pw').addEventListener('keydown',e=>{if(e.key==='Enter')checkUserAuth();});
 window.addEventListener('keydown',e=>{
   if(!me||document.getElementById('app-screen').style.display==='none')return;
   if(document.querySelector('.tab.active')?.id!=='tab-sadhana')return;
@@ -1617,8 +1744,98 @@ window.addEventListener('keydown',e=>{
 // INIT
 // ══════════════════════════════════════
 checkURLRef();
-const _me=localStorage.getItem('sitaram4_me');
+const _me=localStorage.getItem('sitaram6_me');
 if(_me&&load().users[_me]){me=_me;document.getElementById('join-screen').style.display='none';launchApp();}
+else { switchAuthTab('signin'); }
+
+// ══════════════════════════════════════
+// PWA SETUP
+// ══════════════════════════════════════
+// Inline manifest via blob
+const manifestData = {
+  name: "Sitaram — Naam Jap Sadhana",
+  short_name: "Sitaram",
+  description: "Daily naam jap tracker and sangat community",
+  start_url: "./",
+  display: "standalone",
+  background_color: "#1A1408",
+  theme_color: "#1A1408",
+  orientation: "portrait",
+  icons: [
+    {
+      src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='80' fill='%231A1408'/%3E%3Ccircle cx='256' cy='256' r='200' fill='none' stroke='%2396B07D' stroke-width='6' stroke-dasharray='12 8' opacity='.4'/%3E%3Ccircle cx='256' cy='256' r='160' fill='%233B4A2F' opacity='.5'/%3E%3Ctext x='256' y='200' font-family='serif' font-size='80' fill='%23F5EDD8' text-anchor='middle' dominant-baseline='middle'%3E%F0%9F%99%8F%3C/text%3E%3Ctext x='256' y='300' font-family='serif' font-size='52' font-weight='bold' fill='%23D4A96A' text-anchor='middle' letter-spacing='4'%3ESITARAM%3C/text%3E%3Ctext x='256' y='360' font-family='serif' font-size='24' fill='%2396B07D' text-anchor='middle'%3E.life%3C/text%3E%3C/svg%3E",
+      sizes: "512x512",
+      type: "image/svg+xml",
+      purpose: "any maskable"
+    }
+  ]
+};
+try {
+  const blob = new Blob([JSON.stringify(manifestData)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  document.getElementById('pwa-manifest').href = url;
+} catch(e){}
+
+// Service Worker for offline support
+if('serviceWorker' in navigator){
+  const swCode = `
+    const CACHE = 'sitaram-v1';
+    self.addEventListener('install', e => {
+      e.waitUntil(caches.open(CACHE).then(c => c.addAll(['/'])));
+      self.skipWaiting();
+    });
+    self.addEventListener('activate', e => { e.waitUntil(self.clients.claim()); });
+    self.addEventListener('fetch', e => {
+      e.respondWith(
+        caches.match(e.request).then(r => r || fetch(e.request).catch(() => caches.match('/')))
+      );
+    });
+  `;
+  try {
+    const swBlob = new Blob([swCode], {type:'application/javascript'});
+    const swUrl = URL.createObjectURL(swBlob);
+    navigator.serviceWorker.register(swUrl).catch(()=>{});
+  } catch(e){}
+}
+
+let _deferredInstall = null;
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  _deferredInstall = e;
+  // Show install button if banner is open
+  const btn = document.getElementById('pwa-install-btn');
+  if(btn) btn.style.display='block';
+});
+
+function showPWABanner(){
+  const banner = document.getElementById('pwa-banner');
+  banner.style.display = 'block';
+  banner.scrollIntoView({behavior:'smooth', block:'nearest'});
+  // Detect platform
+  const ua = navigator.userAgent;
+  const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+  const isAndroid = /Android/.test(ua);
+  document.getElementById('pwa-ios-instructions').style.display = isIOS ? 'block' : 'none';
+  document.getElementById('pwa-android-instructions').style.display = (!isIOS && isAndroid) ? 'block' : 'none';
+  if(_deferredInstall) document.getElementById('pwa-install-btn').style.display='block';
+  // If desktop or no specific detection, show both
+  if(!isIOS && !isAndroid && !_deferredInstall){
+    document.getElementById('pwa-ios-instructions').style.display='block';
+    document.getElementById('pwa-android-instructions').style.display='block';
+  }
+}
+
+function triggerPWAInstall(){
+  if(_deferredInstall){
+    _deferredInstall.prompt();
+    _deferredInstall.userChoice.then(r=>{
+      if(r.outcome==='accepted') toast('🙏 Sitaram installed! Find it on your home screen.');
+      _deferredInstall=null;
+    });
+  }
+}
+
+window.addEventListener('appinstalled', ()=>{ toast('🙏 Sitaram added to your home screen!'); });
 </script>
 </body>
 </html>
